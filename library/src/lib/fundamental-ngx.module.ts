@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Injector } from '@angular/core';
 import { FundamentalNgxComponent } from './fundamental-ngx.component';
 import { ActionBarModule } from './action-bar/action-bar.module';
 import { AlertModule } from './alert/alert.module';
@@ -29,6 +29,13 @@ import { TileModule } from './tile/tile.module';
 import { TreeModule } from './tree/tree.module';
 import { TimeModule } from './time/time.module';
 import { TimePickerModule } from './time-picker/time-picker.module';
+
+//for ng elements
+import { createCustomElement } from '@angular/elements';
+import { BadgeComponent } from './badge-label/badge.component';
+import { LabelComponent } from './badge-label/label.component';
+import { DatePickerComponent } from './date-picker/date-picker.component';
+import { APP_BASE_HREF } from '@angular/common';
 
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -71,6 +78,20 @@ import { ModalService } from './modal/modal.service';
         TimePickerModule,
         TreeModule
     ],
-    providers: [ModalService]
+    entryComponents: [BadgeComponent, LabelComponent, DatePickerComponent],
+    providers: [ModalService, { provide: APP_BASE_HREF, useValue: '/' }]
 })
-export class FundamentalNgxModule {}
+export class FundamentalNgxModule {
+    constructor(private injector: Injector) {
+        const badge = createCustomElement(BadgeComponent, { injector });
+        customElements.define('made-for-badge', badge);
+
+        const label = createCustomElement(LabelComponent, { injector });
+        customElements.define('made-for-label', label);
+
+        const datePicker = createCustomElement(DatePickerComponent, { injector });
+        customElements.define('made-for-datepicker', datePicker);
+    }
+
+    ngDoBootstrap() {}
+}
