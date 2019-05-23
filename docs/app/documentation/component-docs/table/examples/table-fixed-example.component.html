@@ -1,0 +1,43 @@
+<div class="fd-table--fixed-wrapper" style="width:800px;">
+    <div class="fd-table--fixed">
+        <table class="fd-table">
+            <thead>
+                <tr>
+                    <th
+                        class="fd-table__context-menu fd-table__fixed-col"
+                        style="left:0; width:200px"
+                        aria-controls="col1.2"
+                        aria-haspopup="true"
+                    >
+                        Header Column
+                    </th>
+                    <th class="fd-table__context-menu" aria-controls="col2.2" aria-haspopup="true">
+                        Header Column
+                    </th>
+                    <th class="fd-table__context-menu" aria-controls="col2.2" aria-haspopup="true">
+                        Header Column
+                    </th>
+                    <th class="fd-table__context-menu" aria-controls="col2.2" aria-haspopup="true">
+                        Header Column
+                    </th>
+                    <th class="fd-table__context-menu" aria-controls="col2.2" aria-haspopup="true">
+                        Header Column
+                    </th>
+                    <th class="fd-table__context-menu" aria-controls="col2.2" aria-haspopup="true">
+                        Header Column
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of tableRows">
+                    <td class="fd-table__fixed-col" style="left:0; width:200px">{{ row.column1 }}</td>
+                    <td>{{ row.column2 }}</td>
+                    <td>{{ row.column3 }}</td>
+                    <td>{{ row.column4 }}</td>
+                    <td>{{ row.column5 }}</td>
+                    <td>{{ row.date }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

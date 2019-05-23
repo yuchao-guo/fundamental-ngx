@@ -144,7 +144,10 @@ import {
 } from './component-docs/list/examples/list-examples.component';
 import { LoadingSpinnerExampleComponent } from './component-docs/loading-spinner-docs/examples/loading-spinner-example.component';
 import { LoadingSpinnerContainerExampleComponent } from './component-docs/loading-spinner-docs/examples/loading-spinner-container-example.component';
-import { MenuExampleComponent, MenuGroupExampleComponent } from './component-docs/menu/examples/menu-examples.component';
+import {
+    MenuExampleComponent,
+    MenuGroupExampleComponent
+} from './component-docs/menu/examples/menu-examples.component';
 import { ModalOpenTemplateExampleComponent } from './component-docs/modal/examples/template-as-content/modal-open-template-example.component';
 import { ModalContentComponent } from './component-docs/modal/examples/component-as-content/modal-content.component';
 import { ModalComponentAsContentExampleComponent } from './component-docs/modal/examples/component-as-content/modal-component-as-content-example.component';
@@ -171,7 +174,10 @@ import {
     SideNavigationTitlesExampleComponent
 } from './component-docs/side-navigation/examples/side-navigation-examples.component';
 import { TableExampleComponent } from './component-docs/table/examples/table-example.component';
-import { TabsExampleComponent, TabSelectionExampleComponent } from './component-docs/tabs/examples/tabs-examples-component';
+import {
+    TabsExampleComponent,
+    TabSelectionExampleComponent
+} from './component-docs/tabs/examples/tabs-examples-component';
 import {
     TileActionsExampleComponent,
     TileDisabledExampleComponent,
@@ -209,6 +215,7 @@ import { ModalFullscreenExampleComponent } from './component-docs/modal/examples
 import { InfiniteScrollDocsComponent } from './component-docs/infinite-scroll/infinite-scroll-docs.component';
 import { InfiniteScrollBasicExampleComponent } from './component-docs/infinite-scroll/examples/infinite-scroll-basic-example/infinite-scroll-basic-example.component';
 import { TableCheckboxesExampleComponent } from './component-docs/table/examples/table-checkboxes-example.component';
+import { TableFixedExampleComponent } from './component-docs/table/examples/table-fixed-example.component';
 import { SearchInputAsyncExampleComponent } from './component-docs/search-input/examples/search-input-async-example.component';
 import { SearchInputDynamicExampleComponent } from './component-docs/search-input/examples/search-input-dynamic-example.component';
 import { SearchInputDisplaywithExampleComponent } from './component-docs/search-input/examples/search-input-displaywith-example.component';
@@ -471,6 +478,7 @@ export function highlightJsFactory() {
         SideNavigationTitlesExampleComponent,
         TableExampleComponent,
         TableCheckboxesExampleComponent,
+        TableFixedExampleComponent,
         TabsExampleComponent,
         TabSelectionExampleComponent,
         TileActionsExampleComponent,
@@ -571,10 +579,6 @@ export function highlightJsFactory() {
         FundamentalNgxModule,
         HttpClientModule
     ],
-    providers: [
-        CopyService,
-        ApiDocsService
-    ]
+    providers: [CopyService, ApiDocsService]
 })
-export class DocumentationModule {
-}
+export class DocumentationModule {}

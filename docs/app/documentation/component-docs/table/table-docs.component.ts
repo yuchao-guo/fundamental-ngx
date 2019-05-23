@@ -6,13 +6,14 @@ import * as tableHtmlSrc from '!raw-loader!./examples/table-example.component.ht
 import * as tableJsSrc from '!raw-loader!./examples/table-example.component.ts';
 import * as tableCheckHtml from '!raw-loader!./examples/table-checkboxes-example.component.html';
 import * as tableCheckTs from '!raw-loader!./examples/table-checkboxes-example.component.ts';
+import * as tableFixedHtml from '!raw-loader!./examples/table-fixed-example.component.html';
+import * as tableFixedTs from '!raw-loader!./examples/table-fixed-example.component.ts';
 
 @Component({
     selector: 'app-table',
     templateUrl: './table-docs.component.html'
 })
 export class TableDocsComponent {
-
     static schema: Schema = {
         properties: {
             state: {
@@ -42,6 +43,10 @@ export class TableDocsComponent {
 
     tableCheckboxesTs = tableCheckTs;
 
+    tableFixedHtml = tableFixedHtml;
+
+    tableFixedTs = tableFixedTs;
+
     constructor(private schemaFactory: SchemaFactoryService) {
         this.schema = this.schemaFactory.getComponent('table');
     }
@@ -49,6 +54,4 @@ export class TableDocsComponent {
     onSchemaValues(data) {
         this.data = data;
     }
-
-
 }

@@ -5,7 +5,6 @@ import { Component } from '@angular/core';
     templateUrl: './table-checkboxes-example.component.html'
 })
 export class TableCheckboxesExampleComponent {
-
     selectedRows = [];
 
     allSelected = false;
@@ -102,5 +101,4 @@ export class TableCheckboxesExampleComponent {
         });
         return state;
     }
-
 }
