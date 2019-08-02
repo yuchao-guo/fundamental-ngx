@@ -67,6 +67,7 @@ import {
 } from './component-docs/action-bar/examples/action-bar-examples.component';
 import { AlertExampleComponent } from './component-docs/alert/examples/alert-example.component';
 import { AlertInlineExampleComponent } from './component-docs/alert/examples/alert-inline-example.component';
+import { ColorPaletteExampleComponent } from './component-docs/alert/examples/color-palette-example.component';
 import { AlertComponentAsContentExampleComponent } from './component-docs/alert/examples/alert-component-as-content-example.component';
 import { AlertContentComponent } from './component-docs/alert/examples/alert-content.component';
 import {
@@ -433,6 +434,7 @@ import { SelectViewValueExampleComponent } from './component-docs/select/example
         AlertComponentAsContentExampleComponent,
         AlertContentComponent,
         AlertInlineExampleComponent,
+        ColorPaletteExampleComponent,
         BadgeDefaultExampleComponent,
         BadgeFilledExampleComponent,
         BadgePillExampleComponent,

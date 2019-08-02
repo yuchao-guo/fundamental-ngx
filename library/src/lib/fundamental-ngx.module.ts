@@ -7,6 +7,7 @@ import { BreadcrumbModule } from './breadcrumb/breadcrumb.module';
 import { ButtonModule } from './button/button.module';
 import { ButtonGroupModule } from './button-group/button-group.module';
 import { CalendarModule } from './calendar/calendar.module';
+import { ColorPaletteModule } from './color-palette/color-palette.module';
 import { ComboboxModule } from './combobox/combobox.module';
 import { DatePickerModule } from './date-picker/date-picker.module';
 import { DatetimePickerModule } from './datetime-picker/datetime-picker.module';
@@ -56,6 +57,7 @@ import { LocalizationEditorModule } from './localizator-editor/localization-edit
         ButtonModule,
         ButtonGroupModule,
         CalendarModule,
+        ColorPaletteModule,
         ComboboxModule,
         DatePickerModule,
         DatetimePickerModule,
@@ -93,5 +95,6 @@ import { LocalizationEditorModule } from './localizator-editor/localization-edit
         TreeModule
     ],
     providers: [AlertService, ModalService],
+    declarations: [],
 })
-export class FundamentalNgxModule {}
+export class FundamentalNgxModule { }
