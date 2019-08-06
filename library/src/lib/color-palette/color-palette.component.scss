@@ -1,3 +1,8 @@
 .fd-color-palette {
-    background-color: greenyellow;
+    background-color: white;
+    border: 1px solid var(--fd-color-neutral-4);
+    width: 50%;
+    display: block;
+    z-index: 1000;
+    box-shadow: 0 0 5px gray;
 }

@@ -6,9 +6,13 @@ import { ColorPaletteColorsComponent } from './color-palette-colors/color-palett
 import { ColorPaletteMoreColorsComponent } from './color-palette-more-colors/color-palette-more-colors.component';
 import { ColorPaletteFooterComponent } from './color-palette-footer/color-palette-footer.component';
 
+import { PopoverModule } from '../popover/popover.module';
+import { ButtonModule } from '../button/button.module';
+
 @NgModule({
-    declarations: [ColorPaletteComponent, ColorPaletteHeaderComponent, ColorPaletteColorsComponent, ColorPaletteMoreColorsComponent, ColorPaletteFooterComponent],
-    imports: [CommonModule],
+    declarations: [ColorPaletteComponent, ColorPaletteHeaderComponent,
+        ColorPaletteColorsComponent, ColorPaletteMoreColorsComponent, ColorPaletteFooterComponent],
+    imports: [CommonModule, PopoverModule, ButtonModule],
     exports: [ColorPaletteComponent]
 })
 export class ColorPaletteModule { }

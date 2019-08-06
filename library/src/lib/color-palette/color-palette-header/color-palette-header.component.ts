@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'fd-color-palette-header',
@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ColorPaletteHeaderComponent implements OnInit {
 
+  @Input()
+  defaultColor: string = 'black';
+
+  @Output()
+  selectedDefaultColor: EventEmitter<string> = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  selectDefaultColor(): void {
+    console.log('default clicked. in child component!');
+    this.selectedDefaultColor.emit(this.defaultColor);
   }
 
 }

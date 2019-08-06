@@ -1,3 +1,9 @@
-<p>
-  color-palette-colors works!
-</p>
+<div *ngFor="let color of colors; let i = index" class="color-palette-padding">
+  <div *ngIf="i % 5 === 0" class="row">
+    <div class="color-cell" (click)="selectColor(colors[i])" [ngStyle]="{'background-color': colors[i]}"></div>
+    <div class="color-cell" (click)="selectColor(colors[i+1])" [ngStyle]="{'background-color': colors[i+1]}"></div>
+    <div class="color-cell" (click)="selectColor(colors[i+2])" [ngStyle]="{'background-color': colors[i+2]}"></div>
+    <div class="color-cell" (click)="selectColor(colors[i+3])" [ngStyle]="{'background-color': colors[i+3]}"></div>
+    <div class="color-cell" (click)="selectColor(colors[i+4])" [ngStyle]="{'background-color': colors[i+4]}"></div>
+  </div>
+</div>
