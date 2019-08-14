@@ -1,4 +1,4 @@
-<div *ngFor="let color of customColors; let i = index" class="color-palette-padding">
+<div *ngFor="let color of customColors; let i = index" class="fd-color-palette--compact">
   <div *ngIf="i % 5 === 0" class="row">
     <div class="color-cell" [ngStyle]="{'background-color': customColors[i]}"></div>
     <div class="color-cell" [ngStyle]="{'background-color': customColors[i+1]}"></div>

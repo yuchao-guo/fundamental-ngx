@@ -23,6 +23,7 @@
                         "styles": [
                             "docs/fd-typedoc/assets/css/main.scss",
                             "node_modules/fundamental-styles/dist/fundamental-styles.min.css",
+                            "node_modules/fundamental-styles/dist/components/color-palette.css",
                             "docs/styles.scss"
                         ],
                         "scripts": [

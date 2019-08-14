@@ -7,9 +7,9 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class ColorPaletteColorsComponent {
 
-  colors: string[] = ['red', 'blue', 'orange', 'lawngreen', 'Crimson',
-    'deeppink', 'rosybrown', 'maroon', 'olive', 'linen', 'orchid', 'royalblue', 'cornsilk',
-    'cadetblue', 'darkorange'];
+  colors: string[] = ['Gold', 'LightCoral', 'DeepPink', 'MediumVioletRed', 'MediumSlateBlue',
+    'CornflowerBlue', 'LightSeaGreen', 'OliveDrab', 'RoyalBlue', 'LightCyan', 'White', 'LightGray', 'DarkGray',
+    'DimGray', 'Black'];
 
   color: string;
 
@@ -22,8 +22,4 @@ export class ColorPaletteColorsComponent {
     this.color = color;
     this.selectedColor.emit(this.color);
   }
-
-
-
-
 }

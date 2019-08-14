@@ -12,4 +12,8 @@ export class ColorPaletteMoreColorsComponent implements OnInit {
   ngOnInit() {
   }
 
+  openColorPicker(): void {
+    console.log('Open color picker (not yet implemented)')
+  }
+
 }
