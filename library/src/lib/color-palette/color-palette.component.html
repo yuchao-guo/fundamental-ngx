@@ -10,7 +10,7 @@
       </fd-color-palette-header>
       <fd-color-palette-colors (selectedColor)="selectedColor($event)"></fd-color-palette-colors>
       <fd-color-palette-more-colors></fd-color-palette-more-colors>
-      <fd-color-palette-footer></fd-color-palette-footer>
+      <fd-color-palette-footer (selectedColor)="selectedColor($event)"></fd-color-palette-footer>
     </fd-popover-body>
   </fd-popover>
 </div>

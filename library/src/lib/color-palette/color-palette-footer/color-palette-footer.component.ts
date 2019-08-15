@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'fd-color-palette-footer',
@@ -7,8 +7,17 @@ import { Component } from '@angular/core';
 })
 export class ColorPaletteFooterComponent {
 
-  customColors: string[] = ['white', 'white', 'white', 'white', 'white'];
+  customColors: string[] = ['White', 'White', 'White', 'White', 'White'];
+
+  color: string;
+
+  @Output()
+  readonly selectedColor: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
 
+  selectColor(color: string): void {
+    this.color = color;
+    this.selectedColor.emit(this.color);
+  }
 }

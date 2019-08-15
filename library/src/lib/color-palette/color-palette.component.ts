@@ -9,7 +9,7 @@ export class ColorPaletteComponent implements OnInit {
 
   chosenColor: string;
 
-  defaultColor: string = 'black';
+  defaultColor: string = 'Black';
 
   constructor() { }
 

@@ -1,9 +1,19 @@
 <div *ngFor="let color of customColors; let i = index" class="fd-color-palette--compact">
-  <div *ngIf="i % 5 === 0" class="row">
-    <div class="color-cell" [ngStyle]="{'background-color': customColors[i]}"></div>
-    <div class="color-cell" [ngStyle]="{'background-color': customColors[i+1]}"></div>
-    <div class="color-cell" [ngStyle]="{'background-color': customColors[i+2]}"></div>
-    <div class="color-cell" [ngStyle]="{'background-color': customColors[i+3]}"></div>
-    <div class="color-cell" [ngStyle]="{'background-color': customColors[i+4]}"></div>
+  <div *ngIf="i % 5 === 0" class="fd-color-palette--row">
+    <div class="swatch" (click)="selectColor(customColors[i])">
+      <div class="inner-swatch" [ngStyle]="{'background-color': customColors[i]}"></div>
+    </div>
+    <div class="swatch" (click)="selectColor(customColors[i+1])">
+      <div class="inner-swatch" [ngStyle]="{'background-color': customColors[i+1]}"></div>
+    </div>
+    <div class="swatch" (click)="selectColor(customColors[i+2])">
+      <div class="inner-swatch" [ngStyle]="{'background-color': customColors[i+2]}"></div>
+    </div>
+    <div class="swatch" (click)="selectColor(customColors[i+3])">
+      <div class="inner-swatch" [ngStyle]="{'background-color': customColors[i+3]}"></div>
+    </div>
+    <div class="swatch" (click)="selectColor(customColors[i+4])">
+      <div class="inner-swatch" [ngStyle]="{'background-color': customColors[i+4]}"></div>
+    </div>
   </div>
 </div>
