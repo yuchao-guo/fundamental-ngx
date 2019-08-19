@@ -1,21 +1,9 @@
-<div>
-  <fd-popover [(isOpen)]="isOpen" [fillControlMode]="'at-least'">
-    <fd-popover-control>
-      <button fd-button [attr.aria-expanded]="disabled ? false : isOpen" [attr.aria-disabled]="disabled"
-        aria-haspopup="true" [fdType]="'medium'" [glyph]="'grid'">
-      </button>
-    </fd-popover-control>
-    <fd-popover-body>
-      <fd-color-palette-default [defaultColor]="defaultColor" (selectedDefaultColor)="selectedDefaultColor($event)">
-      </fd-color-palette-default>
-      <fd-color-palette-colors (selectedColor)="selectedColor($event)"></fd-color-palette-colors>
-      <fd-color-palette-more-colors></fd-color-palette-more-colors>
-      <fd-color-palette-footer (selectedColor)="selectedColor($event)"></fd-color-palette-footer>
-    </fd-popover-body>
-  </fd-popover>
-</div>
-
-<div>
-  <h3>For testing</h3>
-  <p>Chosen Color: {{this.chosenColor}}</p>
-</div>
+<fd-split-button>
+  <div fd-split-button-menu>
+    <fd-color-palette-default [defaultColor]="defaultColor" (selectedDefaultColor)="selectedDefaultColor($event)">
+    </fd-color-palette-default>
+    <fd-color-palette-colors (selectedColor)="selectedColor($event)"></fd-color-palette-colors>
+    <fd-color-palette-more-colors></fd-color-palette-more-colors>
+    <fd-color-palette-footer (selectedColor)="selectedColor($event)"></fd-color-palette-footer>
+  </div>
+</fd-split-button>
