@@ -23,6 +23,7 @@ export class DocumentationComponent implements OnInit {
         { url: 'buttonGroup', name: 'Button Group' },
         { url: 'splitButton', name: 'Split Button' },
         { url: 'calendar', name: 'Calendar' },
+        { url: 'colorPalette', name: 'Color Palette' },
         { url: 'combobox', name: 'Combobox' },
         { url: 'datePicker', name: 'Date Picker' },
         { url: 'datetime-picker', name: 'Datetime Picker' },

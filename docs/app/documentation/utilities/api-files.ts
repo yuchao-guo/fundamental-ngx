@@ -47,6 +47,9 @@ export const API_FILES = {
         'DateFormatParserDefault',
         'FdDate'
     ],
+    colorPalette: [
+        'ColorPaletteComponent'
+    ],
     combobox: [
         'ComboboxComponent'
     ],

@@ -34,6 +34,7 @@ import { IconDocsComponent } from './component-docs/icon/icon-docs.component';
 import { IdentifierDocsComponent } from './component-docs/identifier/identifier-docs.component';
 import { InlineHelpDocsComponent } from './component-docs/inline-help/inline-help-docs.component';
 import { InputGroupDocsComponent } from './component-docs/input-group/input-group-docs.component';
+import { ColorPaletteDocsComponent } from './component-docs/color-palette/color-palette-docs.component';
 import { ComboboxDocsComponent } from './component-docs/combobox/combobox-docs.component';
 import { ImageDocsComponent } from './component-docs/image/image-docs.component';
 import { DropdownDocsComponent } from './component-docs/dropdown/dropdown-docs.component';
@@ -274,6 +275,7 @@ import { BreadcrumbHeaderComponent } from './component-docs/breadcrumb/breadcrum
 import { ButtonHeaderComponent } from './component-docs/button/button-header/button-header.component';
 import { ButtonGroupHeaderComponent } from './component-docs/button-group/button-group-header/button-group-header.component';
 import { CalendarHeaderComponent } from './component-docs/calendar/calendar-header/calendar-header.component';
+import { ColorPaletteHeaderComponent } from './component-docs/color-palette/color-palette-header/color-palette-header.component';
 import { ComboboxHeaderComponent } from './component-docs/combobox/combobox-header/combobox-header.component';
 import { DatePickerHeaderComponent } from './component-docs/date-picker/date-picker-header/date-picker-header.component';
 import { DatetimePickerHeaderComponent } from './component-docs/datetime-picker/datetime-picker-header/datetime-picker-header.component';
@@ -401,6 +403,7 @@ import { SelectViewValueExampleComponent } from './component-docs/select/example
         IdentifierDocsComponent,
         InlineHelpDocsComponent,
         InputGroupDocsComponent,
+        ColorPaletteDocsComponent,
         ImageDocsComponent,
         ListDocsComponent,
         MenuDocsComponent,
@@ -632,6 +635,7 @@ import { SelectViewValueExampleComponent } from './component-docs/select/example
         ButtonGroupHeaderComponent,
         SplitButtonHeaderComponent,
         CalendarHeaderComponent,
+        ColorPaletteHeaderComponent,
         ComboboxHeaderComponent,
         DatePickerHeaderComponent,
         DatetimePickerHeaderComponent,

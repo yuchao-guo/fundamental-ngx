@@ -1,11 +1,11 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
-  selector: 'fd-color-palette-header',
-  templateUrl: './color-palette-header.component.html',
-  styleUrls: ['./color-palette-header.component.scss']
+  selector: 'fd-color-palette-default',
+  templateUrl: './color-palette-default.component.html',
+  styleUrls: ['./color-palette-default.component.scss']
 })
-export class ColorPaletteHeaderComponent implements OnInit {
+export class ColorPaletteDefaultComponent implements OnInit {
 
   @Input()
   defaultColor: string = 'black';
