@@ -4,4 +4,7 @@ import { Component } from '@angular/core';
     selector: 'fd-color-palette-full-featured-example',
     templateUrl: './color-palette-full-featured-example.component.html'
 })
-export class ColorPaletteFullFeaturedExampleComponent { }
+export class ColorPaletteFullFeaturedExampleComponent {
+
+    selectedColor: string = 'some-selected-color';
+}

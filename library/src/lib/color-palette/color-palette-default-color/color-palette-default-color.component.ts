@@ -1,14 +1,14 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
-  selector: 'fd-color-palette-default',
-  templateUrl: './color-palette-default.component.html',
-  styleUrls: ['./color-palette-default.component.scss']
+  selector: 'fd-color-palette-default-color',
+  templateUrl: './color-palette-default-color.component.html',
+  styleUrls: ['./color-palette-default-color.component.scss']
 })
-export class ColorPaletteDefaultComponent implements OnInit {
+export class ColorPaletteDefaultColorComponent implements OnInit {
 
   @Input()
-  defaultColor: string = 'black';
+  defaultColor: string;
 
   @Output()
   selectedDefaultColor: EventEmitter<string> = new EventEmitter<string>();
@@ -19,7 +19,6 @@ export class ColorPaletteDefaultComponent implements OnInit {
   }
 
   selectDefaultColor(): void {
-    console.log('default clicked. in child component!');
     this.selectedDefaultColor.emit(this.defaultColor);
   }
 

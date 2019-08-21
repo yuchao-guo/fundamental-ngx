@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { ColorPaletteComponent } from './color-palette.component';
 import { CommonModule } from '@angular/common';
-import { ColorPaletteDefaultComponent } from './color-palette-default/color-palette-default.component';
-import { ColorPaletteColorsComponent } from './color-palette-colors/color-palette-colors.component';
+import { ColorPaletteDefaultColorComponent } from './color-palette-default-color/color-palette-default-color.component';
+import { ColorPaletteSwatchContainerComponent } from './color-palette-swatch-container/color-palette-swatch-container.component';
 import { ColorPaletteMoreColorsComponent } from './color-palette-more-colors/color-palette-more-colors.component';
-import { ColorPaletteFooterComponent } from './color-palette-footer/color-palette-footer.component';
+import { ColorPaletteRecentColorsComponent } from './color-palette-recent-colors/color-palette-recent-colors.component';
 
 import { SplitButtonModule } from '../split-button/split-button.module';
 import { PopoverModule } from '../popover/popover.module';
 import { ButtonModule } from '../button/button.module';
 
 @NgModule({
-    declarations: [ColorPaletteComponent, ColorPaletteDefaultComponent,
-        ColorPaletteColorsComponent, ColorPaletteMoreColorsComponent, ColorPaletteFooterComponent],
+    declarations: [ColorPaletteComponent, ColorPaletteDefaultColorComponent,
+        ColorPaletteSwatchContainerComponent, ColorPaletteMoreColorsComponent, ColorPaletteRecentColorsComponent],
     imports: [CommonModule, PopoverModule, ButtonModule, SplitButtonModule],
     exports: [ColorPaletteComponent]
 })

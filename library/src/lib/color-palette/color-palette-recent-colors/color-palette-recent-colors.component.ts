@@ -1,11 +1,11 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
-  selector: 'fd-color-palette-footer',
-  templateUrl: './color-palette-footer.component.html',
-  styleUrls: ['./color-palette-footer.component.scss']
+  selector: 'fd-color-palette-recent-colors',
+  templateUrl: './color-palette-recent-colors.component.html',
+  styleUrls: ['./color-palette-recent-colors.component.scss']
 })
-export class ColorPaletteFooterComponent {
+export class ColorPaletteRecentColorsComponent {
 
   customColors: string[] = ['White', 'White', 'White', 'White', 'White'];
 

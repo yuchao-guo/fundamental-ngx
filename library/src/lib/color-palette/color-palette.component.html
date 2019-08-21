@@ -1,9 +1,14 @@
 <fd-split-button>
   <div fd-split-button-menu>
-    <fd-color-palette-default [defaultColor]="defaultColor" (selectedDefaultColor)="selectedDefaultColor($event)">
-    </fd-color-palette-default>
-    <fd-color-palette-colors (selectedColor)="selectedColor($event)"></fd-color-palette-colors>
-    <fd-color-palette-more-colors></fd-color-palette-more-colors>
-    <fd-color-palette-footer (selectedColor)="selectedColor($event)"></fd-color-palette-footer>
+    <fd-color-palette-default-color *ngIf="this.variantConfiguration.defaultColor" [defaultColor]="defaultColor"
+      (selectedDefaultColor)="selectedColor($event)">
+    </fd-color-palette-default-color>
+    <fd-color-palette-swatch-container *ngIf="this.variantConfiguration.swatchContainer"
+      (selectedColor)="selectedColor($event)">
+    </fd-color-palette-swatch-container>
+    <fd-color-palette-more-colors *ngIf="this.variantConfiguration.moreColors"></fd-color-palette-more-colors>
+    <fd-color-palette-recent-colors *ngIf="this.variantConfiguration.recentColors"
+      (selectedColor)="selectedColor($event)">
+    </fd-color-palette-recent-colors>
   </div>
 </fd-split-button>
