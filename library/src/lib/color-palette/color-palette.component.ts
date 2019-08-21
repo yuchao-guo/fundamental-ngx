@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { VariantConfiguration } from './models/variant-configuration';
 
@@ -13,11 +13,12 @@ export class ColorPaletteComponent implements OnInit {
   @Input()
   variant: string;
 
+  /** Varible storing the color the user has clicked on */
+  @Output()
+  chosenColor: EventEmitter<string> = new EventEmitter<string>();
+
   /** Object used to hide/show various sub-components of the color-palette based on the desired variant */
   variantConfiguration: VariantConfiguration;
-
-  /** Varible storing the color the user has clicked on */
-  chosenColor: string;
 
   /** Variable that holds the color that is used if user selects 'default color' */
   defaultColor: string = 'Black';
@@ -31,7 +32,8 @@ export class ColorPaletteComponent implements OnInit {
 
   /** Method used to make color selection */
   public selectedColor(color: string): void {
-    this.chosenColor = color;
+    this.chosenColor.emit(color);
+    // this.chosenColor = color;
     console.log(`Selected color ${color}`);
   }
 
