@@ -13,6 +13,9 @@ export class ColorPaletteComponent implements OnInit {
   @Input()
   variant: string;
 
+  @Input()
+  colorPaletteLauncherType: string;
+
   /** Varible storing the color the user has clicked on */
   @Output()
   chosenColor: EventEmitter<string> = new EventEmitter<string>();
@@ -20,21 +23,21 @@ export class ColorPaletteComponent implements OnInit {
   /** Object used to hide/show various sub-components of the color-palette based on the desired variant */
   variantConfiguration: VariantConfiguration;
 
+  chosenColorLocal: string;
+
   /** Variable that holds the color that is used if user selects 'default color' */
   defaultColor: string = 'Black';
 
   constructor() { }
 
   ngOnInit() {
-    console.log(`we tried to render a ${this.variant} variant of the color-palette component`);
     this.configureVariant(this.variant);
   }
 
   /** Method used to make color selection */
   public selectedColor(color: string): void {
-    this.chosenColor.emit(color);
-    // this.chosenColor = color;
-    console.log(`Selected color ${color}`);
+    this.chosenColorLocal = color;
+    this.chosenColor.emit(this.chosenColorLocal);
   }
 
   /** Method that configures the object that is used to determine which variant is displayed */
@@ -48,6 +51,7 @@ export class ColorPaletteComponent implements OnInit {
     }
   }
 
+  /** @hidden */
   private getConfigurationObject(
     defaultColor: boolean,
     swatchContainer: boolean,

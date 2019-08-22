@@ -4,6 +4,7 @@ import { ExampleFile } from '../../core-helpers/code-example/example-file';
 import * as colorPaletteFullFeaturedExample from '!raw-loader!./examples/color-palette-full-featured-example.component.html';
 import * as colorPaletteComplexExample from '!raw-loader!./examples/color-palette-complex-example.component.html';
 import * as colorPaletteSimpleExample from '!raw-loader!./examples/color-palette-simple-example.component.html';
+import * as colorPaletteFullFeaturedInputExample from '!raw-loader!./examples/color-palette-full-featured-input-example.component.html';
 
 @Component({
     selector: 'app-color-palette',
@@ -25,4 +26,9 @@ export class ColorPaletteDocsComponent {
         language: 'html',
         code: colorPaletteSimpleExample
     }];
+
+    colorPaletteFullFeaturedInputExampleHtml: ExampleFile[] = [{
+        language: 'html',
+        code: colorPaletteFullFeaturedInputExample
+    }]
 }

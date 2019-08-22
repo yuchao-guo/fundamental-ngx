@@ -1,5 +1,16 @@
-<fd-split-button>
-  <div fd-split-button-menu>
+<fd-popover placement="bottom">
+
+  <fd-popover-control>
+    <fd-split-button *ngIf="colorPaletteLauncherType === 'split-button'">
+      <ng-template fd-split-button-action-title>
+        <strong [style.color]="this.chosenColorLocal">A</strong>
+      </ng-template>
+    </fd-split-button>
+    <fd-input-group *ngIf="colorPaletteLauncherType === 'input'" [placeholder]="'Color'"
+      [(ngModel)]="this.chosenColorLocal"></fd-input-group>
+  </fd-popover-control>
+
+  <fd-popover-body>
     <fd-color-palette-default-color *ngIf="this.variantConfiguration.defaultColor" [defaultColor]="defaultColor"
       (selectedDefaultColor)="selectedColor($event)">
     </fd-color-palette-default-color>
@@ -10,5 +21,5 @@
     <fd-color-palette-recent-colors *ngIf="this.variantConfiguration.recentColors"
       (selectedColor)="selectedColor($event)">
     </fd-color-palette-recent-colors>
-  </div>
-</fd-split-button>
+  </fd-popover-body>
+</fd-popover>

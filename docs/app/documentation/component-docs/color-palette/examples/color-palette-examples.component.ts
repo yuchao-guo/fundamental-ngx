@@ -27,3 +27,12 @@ export class ColorPaletteSimpleExampleComponent {
     selectedColor: string = 'some-selected-color';
 }
 
+@Component({
+    selector: 'fd-color-palette-full-featured-input-example',
+    templateUrl: './color-palette-full-featured-input-example.component.html'
+})
+export class ColorPaletteFullFeaturedInputExampleComponent {
+
+    selectedColor: string = 'some-selected-color';
+}
+

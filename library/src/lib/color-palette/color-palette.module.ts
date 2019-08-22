@@ -9,11 +9,13 @@ import { ColorPaletteRecentColorsComponent } from './color-palette-recent-colors
 import { SplitButtonModule } from '../split-button/split-button.module';
 import { PopoverModule } from '../popover/popover.module';
 import { ButtonModule } from '../button/button.module';
+import { InputGroupModule } from '../input-group/input-group.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [ColorPaletteComponent, ColorPaletteDefaultColorComponent,
         ColorPaletteSwatchContainerComponent, ColorPaletteMoreColorsComponent, ColorPaletteRecentColorsComponent],
-    imports: [CommonModule, PopoverModule, ButtonModule, SplitButtonModule],
+    imports: [CommonModule, PopoverModule, ButtonModule, SplitButtonModule, InputGroupModule, FormsModule],
     exports: [ColorPaletteComponent]
 })
 export class ColorPaletteModule { }
