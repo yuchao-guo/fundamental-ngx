@@ -101,8 +101,10 @@ import { CalendarSingleExampleComponent } from './component-docs/calendar/exampl
 import { CalendarMondayStartExampleComponent } from './component-docs/calendar/examples/calendar-monday-start-example.component';
 import { ColorPaletteFullFeaturedExampleComponent } from './component-docs/color-palette/examples/color-palette-examples.component';
 import { ColorPaletteFullFeaturedInputExampleComponent } from './component-docs/color-palette/examples/color-palette-examples.component';
+import { ColorPaletteComplexInputExampleComponent } from './component-docs/color-palette/examples/color-palette-examples.component';
 import { ColorPaletteComplexExampleComponent } from './component-docs/color-palette/examples/color-palette-examples.component';
 import { ColorPaletteSimpleExampleComponent } from './component-docs/color-palette/examples/color-palette-examples.component';
+import { ColorPaletteSimpleInputExampleComponent } from './component-docs/color-palette/examples/color-palette-examples.component';
 import { ComboboxExampleComponent } from './component-docs/combobox/examples/combobox-example.component';
 import { DatePickerRangeExampleComponent } from './component-docs/date-picker/examples/date-picker-range-example.component';
 import { DatePickerSingleExampleComponent } from './component-docs/date-picker/examples/date-picker-single-example.component';
@@ -469,7 +471,9 @@ import { SelectViewValueExampleComponent } from './component-docs/select/example
         ColorPaletteFullFeaturedExampleComponent,
         ColorPaletteComplexExampleComponent,
         ColorPaletteSimpleExampleComponent,
+        ColorPaletteSimpleInputExampleComponent,
         ColorPaletteFullFeaturedInputExampleComponent,
+        ColorPaletteComplexInputExampleComponent,
         CalendarFormSingleExampleComponent,
         CalendarFormRangeExampleComponent,
         CalendarProgrammaticallyChangeExampleComponent,
