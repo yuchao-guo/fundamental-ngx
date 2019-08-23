@@ -11,7 +11,8 @@
   <span *ngIf="!button"
         class="fd-input-group__addon"
         [ngClass]="{'fd-input-group__addon--after': placement !== 'before',
-          'fd-input-group__addon--before': placement === 'before'}">
+          'fd-input-group__addon--before': placement === 'before'}" 
+          [ngStyle]="{ 'background-color': addOnBackgroundColor, width: addOnBackgroundColor !== null ? '36px' : '' }">
     <ng-container *ngIf="!glyph">{{addOnText}}</ng-container>
     <span *ngIf="glyph"
           [ngClass]="'sap-icon--' + glyph"></span>

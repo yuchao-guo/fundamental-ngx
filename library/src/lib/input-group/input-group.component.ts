@@ -23,8 +23,8 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     encapsulation: ViewEncapsulation.None
 })
 export class InputGroupComponent implements ControlValueAccessor {
-    /** 
-     * The placement of the add-on. 
+    /**
+     * The placement of the add-on.
      * Options include *before* and *after*
      */
     @Input()
@@ -57,6 +57,10 @@ export class InputGroupComponent implements ControlValueAccessor {
     /** Whether the input group is disabled. */
     @Input()
     disabled: boolean;
+
+    /** Used to pass in the color of the background of the add-on */
+    @Input()
+    addOnBackgroundColor: string = null;
 
     /** Event emitted when the add-on button is clicked. */
     @Output()
