@@ -54,3 +54,13 @@ export class ColorPaletteSimpleInputExampleComponent {
     selectedColor: string = 'some-selected-color';
 }
 
+@Component({
+    selector: 'fd-color-palette-custom-default-colors-example',
+    templateUrl: './color-palette-custom-default-colors-example.component.html'
+})
+export class ColorPaletteCustomDefaultColorsExampleComponent {
+
+    selectedColor: string = 'some-selected-color';
+    alternateDefaultColors: string[] = ['#c84a05', '#32b4d1', '#a3e014', '#fb2d14', '#b962f2'];
+}
+

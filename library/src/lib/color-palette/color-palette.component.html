@@ -23,6 +23,7 @@
         <fd-color-palette-swatch-container
             *ngIf="this.variantConfiguration.swatchContainer"
             (selectedColor)="selectedColor($event)"
+            [defaultColors]="defaultColors"
         >
         </fd-color-palette-swatch-container>
         <fd-color-palette-more-colors *ngIf="this.variantConfiguration.moreColors"></fd-color-palette-more-colors>

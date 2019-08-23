@@ -105,6 +105,7 @@ import { ColorPaletteComplexInputExampleComponent } from './component-docs/color
 import { ColorPaletteComplexExampleComponent } from './component-docs/color-palette/examples/color-palette-examples.component';
 import { ColorPaletteSimpleExampleComponent } from './component-docs/color-palette/examples/color-palette-examples.component';
 import { ColorPaletteSimpleInputExampleComponent } from './component-docs/color-palette/examples/color-palette-examples.component';
+import { ColorPaletteCustomDefaultColorsExampleComponent } from './component-docs/color-palette/examples/color-palette-examples.component';
 import { ComboboxExampleComponent } from './component-docs/combobox/examples/combobox-example.component';
 import { DatePickerRangeExampleComponent } from './component-docs/date-picker/examples/date-picker-range-example.component';
 import { DatePickerSingleExampleComponent } from './component-docs/date-picker/examples/date-picker-single-example.component';
@@ -472,6 +473,7 @@ import { SelectViewValueExampleComponent } from './component-docs/select/example
         ColorPaletteComplexExampleComponent,
         ColorPaletteSimpleExampleComponent,
         ColorPaletteSimpleInputExampleComponent,
+        ColorPaletteCustomDefaultColorsExampleComponent,
         ColorPaletteFullFeaturedInputExampleComponent,
         ColorPaletteComplexInputExampleComponent,
         CalendarFormSingleExampleComponent,

@@ -1,20 +1,20 @@
 <div class="fd-color-palette--compact upper-lower-border">
-  <div *ngFor="let color of colors; let i = index" class="">
+  <div *ngFor="let color of defaultColors; let i = index" class="">
     <div *ngIf="i % 5 === 0" class="fd-color-palette--row">
-      <div class="swatch" (click)="selectColor(colors[i])">
-        <div class="inner-swatch" [ngStyle]="{'background-color': colors[i]}"></div>
+      <div class="swatch" (click)="selectColor(defaultColors[i])">
+        <div class="inner-swatch" [ngStyle]="{'background-color': defaultColors[i]}"></div>
       </div>
-      <div class="swatch" (click)="selectColor(colors[i+1])">
-        <div class="inner-swatch" [ngStyle]="{'background-color': colors[i+1]}"></div>
+      <div class="swatch" (click)="selectColor(defaultColors[i+1])">
+        <div class="inner-swatch" [ngStyle]="{'background-color': defaultColors[i+1]}"></div>
       </div>
-      <div class="swatch" (click)="selectColor(colors[i+2])">
-        <div class="inner-swatch" [ngStyle]="{'background-color': colors[i+2]}"></div>
+      <div class="swatch" (click)="selectColor(defaultColors[i+2])">
+        <div class="inner-swatch" [ngStyle]="{'background-color': defaultColors[i+2]}"></div>
       </div>
-      <div class="swatch" (click)="selectColor(colors[i+3])">
-        <div class="inner-swatch" [ngStyle]="{'background-color': colors[i+3]}"></div>
+      <div class="swatch" (click)="selectColor(defaultColors[i+3])">
+        <div class="inner-swatch" [ngStyle]="{'background-color': defaultColors[i+3]}"></div>
       </div>
-      <div class="swatch" (click)="selectColor(colors[i+4])">
-        <div class="inner-swatch" [ngStyle]="{'background-color': colors[i+4]}"></div>
+      <div class="swatch" (click)="selectColor(defaultColors[i+4])">
+        <div class="inner-swatch" [ngStyle]="{'background-color': defaultColors[i+4]}"></div>
       </div>
     </div>
   </div>
