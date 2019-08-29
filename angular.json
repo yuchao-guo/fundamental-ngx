@@ -16,19 +16,13 @@
                         "main": "docs/main.ts",
                         "tsConfig": "docs/tsconfig.app.json",
                         "polyfills": "docs/polyfills.ts",
-                        "assets": [
-                            "docs/assets",
-                            "docs/favicon.ico"
-                        ],
+                        "assets": ["docs/assets", "docs/favicon.ico"],
                         "styles": [
                             "docs/fd-typedoc/assets/css/main.scss",
                             "node_modules/fundamental-styles/dist/fundamental-styles.min.css",
-                            "node_modules/fundamental-styles/dist/components/color-palette.css",
                             "docs/styles.scss"
                         ],
-                        "scripts": [
-                            "node_modules/marked/lib/marked.js"
-                        ]
+                        "scripts": ["node_modules/marked/lib/marked.js"]
                     },
                     "configurations": {
                         "production": {
@@ -95,23 +89,14 @@
                         "polyfills": "docs/polyfills.ts",
                         "tsConfig": "docs/tsconfig.spec.json",
                         "scripts": [],
-                        "styles": [
-                            "node_modules/fiori-fundamentals/dist/fiori-fundamentals.css",
-                            "docs/styles.scss"
-                        ],
-                        "assets": [
-                            "docs/assets",
-                            "docs/favicon.ico"
-                        ]
+                        "styles": ["node_modules/fiori-fundamentals/dist/fiori-fundamentals.css", "docs/styles.scss"],
+                        "assets": ["docs/assets", "docs/favicon.ico"]
                     }
                 },
                 "lint": {
                     "builder": "@angular-devkit/build-angular:tslint",
                     "options": {
-                        "tsConfig": [
-                            "library/tsconfig.lib.json",
-                            "library/tsconfig.spec.json"
-                        ],
+                        "tsConfig": ["library/tsconfig.lib.json", "library/tsconfig.spec.json"],
                         "exclude": []
                     }
                 }
@@ -132,9 +117,7 @@
                 "lint": {
                     "builder": "@angular-devkit/build-angular:tslint",
                     "options": {
-                        "tsConfig": [
-                            "e2e/tsconfig.e2e.json"
-                        ],
+                        "tsConfig": ["e2e/tsconfig.e2e.json"],
                         "exclude": []
                     }
                 }
@@ -169,13 +152,8 @@
                 "lint": {
                     "builder": "@angular-devkit/build-angular:tslint",
                     "options": {
-                        "tsConfig": [
-                            "library/tsconfig.lib.json",
-                            "library/tsconfig.spec.json"
-                        ],
-                        "exclude": [
-                            "**/node_modules/**"
-                        ]
+                        "tsConfig": ["library/tsconfig.lib.json", "library/tsconfig.spec.json"],
+                        "exclude": ["**/node_modules/**"]
                     }
                 }
             }
