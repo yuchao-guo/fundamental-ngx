@@ -5,9 +5,12 @@ import { PlatformButtonModule } from './components/button/button.module';
 import { PlatformSearchInputModule } from './components/search-input/search-input.module';
 import { ActionBarModule } from './components/action-bar/action-bar.module';
 import { FdpMenuModule } from './components/menu/menu.module';
+import { FdpFormModule } from './components/form/fdp-form.module';
+
+import { from } from 'rxjs';
 
 @NgModule({
     imports: [CommonModule, FundamentalNgxCoreModule],
-    exports: [PlatformButtonModule, PlatformSearchInputModule, ActionBarModule, FdpMenuModule]
+    exports: [PlatformButtonModule, PlatformSearchInputModule, ActionBarModule, FdpMenuModule, FdpFormModule]
 })
 export class FundamentalNgxPlatformModule {}

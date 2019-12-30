@@ -1,2 +1,21 @@
-<markdown class="fd-playground--markdown" [src]="'assets/NEW_PLATFORM_COMPONENT.md'" (load)="onLoad($event)"
-    (error)="onError($event)"></markdown>
+<markdown
+    class="fd-playground--markdown"
+    [src]="'assets/NEW_PLATFORM_COMPONENT.md'"
+    (load)="onLoad($event)"
+    (error)="onError($event)"
+></markdown>
+<h1>Hello Deepak!</h1>
+
+<fdp-form-group #fg [multiLayout]="true" [editable]="true">
+    <fdp-form-field
+        [id]="'street'"
+        [label]="'my-labelqqq'"
+        [noLabelLayout]="true"
+        zone="zLeft"
+        rank="10"
+        [fluid]="true"
+        [editable]="true"
+        [required]="true"
+    >
+    </fdp-form-field>
+</fdp-form-group>

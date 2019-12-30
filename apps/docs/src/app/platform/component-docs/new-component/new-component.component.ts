@@ -5,10 +5,18 @@ import { Component, OnInit } from '@angular/core';
     templateUrl: './new-component.component.html'
 })
 export class NewComponentComponent implements OnInit {
-    constructor() { }
+    multiLayout: boolean = false;
+    editable: boolean = false;
+    id: string;
+    noLabelLayout: boolean = false;
+    fluid: boolean = true;
 
-    ngOnInit() { }
+    constructor() {}
 
-    onLoad(event) { }
-    onError(event) { }
+    ngOnInit() {
+        console.log('Coming here!');
+    }
+
+    onLoad(event) {}
+    onError(event) {}
 }
