@@ -21,8 +21,8 @@ export class PlatformDocumentationComponent {
     ];
 
     components = [
-        { url: 'platform/button', name: 'Button' }
-
+        { url: 'platform/button', name: 'Button' },
+        { url: 'platform/label', name: 'Label' }
     ];
 
     layouts = [];

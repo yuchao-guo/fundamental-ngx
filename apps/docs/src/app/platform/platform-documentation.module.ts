@@ -18,6 +18,7 @@ import {
 } from '../platform/component-docs/platform-button/platform-button-examples/platform-button-examples.component';
 import { SchemaModule } from '../schema/schema.module';
 import { PLATFORM_COMPONENT_SCHEMAS } from './component-docs/schemas';
+import { LabelPageComponent } from './component-docs/label/labelpage.component';
 
 @NgModule({
     declarations: [
@@ -31,8 +32,8 @@ import { PLATFORM_COMPONENT_SCHEMAS } from './component-docs/schemas';
         PlatformButtonStateExampleComponent,
         PlatformButtonHeaderComponent,
         PlatformButtonTruncateExampleComponent,
-        NewComponentComponent
-
+        NewComponentComponent,
+        LabelPageComponent
     ],
     imports: [
         SharedDocumentationModule,
@@ -40,8 +41,6 @@ import { PLATFORM_COMPONENT_SCHEMAS } from './component-docs/schemas';
         MarkdownModule.forChild(),
         RouterModule.forChild(ROUTES)
     ],
-    providers: [
-        { provide: 'CURRENT_LIB', useValue: 'platform' }
-    ]
+    providers: [{ provide: 'CURRENT_LIB', useValue: 'platform' }]
 })
-export class PlatformDocumentationModule { }
+export class PlatformDocumentationModule {}

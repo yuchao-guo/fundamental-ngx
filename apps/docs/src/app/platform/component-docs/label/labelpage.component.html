@@ -1,0 +1,39 @@
+<header>Label</header>
+<description>
+    The Label Component is used to place Label with any form elements like Input field.
+    <br /><br />
+    Labels can be wrapped if its length is more than available width otherwise it will truncate with ellipsis.
+</description>
+<import module="LabelModule"></import>
+
+<fd-header-tabs></fd-header-tabs>
+<router-outlet></router-outlet>
+
+<fd-docs-section-title [id]="'Label-options'" [componentName]="'label'"> Label Options </fd-docs-section-title>
+<description>
+    Label of field will be simple text. It will have <code style="color: red; font-weight: bold;">*</code>
+    if field infront is a required field.
+</description>
+<component-example [name]="'ex0'">
+    <fdp-form-group #fg [multiLayout]="true" [formGroup]="form" [object]="data">
+        <fdp-form-field
+            #ffl1
+            [id]="id"
+            [label]="label"
+            [noLabelLayout]="true"
+            [required]="true"
+            hint="Hint for one "
+            zone="zLeft"
+            rank="90"
+        >
+            <input
+                style="width: 700px;"
+                type="text"
+                placeholder="please input your firstName"
+                [formControl]="ffl1.formControl"
+            />
+        </fdp-form-field>
+    </fdp-form-group>
+</component-example>
+<!-- <code-example [exampleFiles]="buttonHtmlOptions"></code-example> -->
+<separator></separator>

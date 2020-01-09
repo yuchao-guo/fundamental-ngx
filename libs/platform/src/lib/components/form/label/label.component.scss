@@ -1,4 +1,39 @@
 .fdp-required-mark::after {
     content: '*';
+    font-weight: 600;
+    padding-left: 2px;
+    padding-right: 2px;
     color: red;
+    vertical-align: top;
+}
+
+.set-label-max-width {
+    max-width: 200px;
+    display: inline-block;
+}
+
+.set-label-alignment-right {
+    text-align: right;
+}
+
+.set-label-alignment-left {
+    text-align: left;
+}
+
+.overflow-truncate-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+}
+
+.overflow-truncate-text-wrap {
+    white-space: pre-line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+}
+
+.hyphenation-label {
+    hyphens: auto;
 }

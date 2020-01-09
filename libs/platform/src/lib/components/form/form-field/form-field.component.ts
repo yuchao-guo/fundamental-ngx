@@ -33,10 +33,12 @@ import {
     ViewChild
 } from '@angular/core';
 import { InlineHelpComponent } from '@fundamental-ngx/core';
+import { FormFieldControl } from '../form-control';
 import { coerceBooleanProperty, coerceNumberProperty } from '@angular/cdk/coercion';
 import { FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { startWith, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+// import {defaultLabelForIdentifier} from '@ngx-metaui/rules';
 
 export abstract class FormField {
     i18Strings: TemplateRef<any>;
@@ -121,7 +123,7 @@ export class FormFieldComponent
 
     set formGroup(value: FormGroup) {
         this._formGroup = value;
-        // this.initFormControl();
+        this.initFormControl();
         this._cd.markForCheck();
     }
 
@@ -144,7 +146,17 @@ export class FormFieldComponent
     i18Strings: TemplateRef<any>;
 
     @Input()
-    editable: boolean = true;
+    get editable(): boolean {
+        return this._editable;
+    }
+
+    set editable(value: boolean) {
+        const newVal = coerceBooleanProperty(value);
+        if (this._editable !== newVal) {
+            this._editable = value;
+            this.updateControlProperties();
+        }
+    }
 
     @Output()
     onChange: EventEmitter<string> = new EventEmitter<string>();
@@ -155,6 +167,10 @@ export class FormFieldComponent
     @ContentChild(InlineHelpComponent, { static: false })
     _hintChild: InlineHelpComponent;
 
+    @ContentChild(FormFieldControl, { static: false })
+    _control: FormFieldControl<any>;
+
+    protected _editable: boolean = true;
     protected _formGroup: FormGroup;
     protected _required: boolean = false;
     protected _destroyed = new Subject<void>();
@@ -168,7 +184,8 @@ export class FormFieldComponent
 
     ngOnInit(): void {
         if (!this.noLabelLayout && this.id && !this.label) {
-            this.label = 'Default-Label';
+            // this.label = defaultLabelForIdentifier(this.id);
+            this.label = 'default-label';
         }
 
         if (this.columns && (this.columns < 1 || this.columns > 12)) {
@@ -187,23 +204,23 @@ export class FormFieldComponent
     ngAfterContentInit(): void {
         // this.validateFieldControlComponent();
 
-        // if (this._control) {
-        //     this._control.stateChanges.pipe(startWith(null!)).subscribe(s => {
-        //         this.updateControlProperties();
-        //         // need to call explicitly detectChanges() instead of markForCheck before the
-        //         // modified validation state of the control passes over checked phase
-        //         this.onChange.emit('stateChanges');
-        //         this._cd.detectChanges();
-        //     });
-        // }
+        if (this._control && this._control.stateChanges) {
+            this._control.stateChanges.pipe(startWith(null!)).subscribe(s => {
+                this.updateControlProperties();
+                // need to call explicitly detectChanges() instead of markForCheck before the
+                // modified validation state of the control passes over checked phase
+                this.onChange.emit('stateChanges');
+                this._cd.detectChanges();
+            });
+        }
 
-        // // Refresh UI when value changes
-        // if (this._control && this._control.ngControl && this._control.ngControl.valueChanges) {
-        //     this._control.ngControl.valueChanges.pipe(takeUntil(this._destroyed)).subscribe(v => {
-        //         // this.onChange.emit('valueChangess');
-        //         this._cd.markForCheck();
-        //     });
-        // }
+        // Refresh UI when value changes
+        if (this._control && this._control.ngControl && this._control.ngControl.valueChanges) {
+            this._control.ngControl.valueChanges.pipe(takeUntil(this._destroyed)).subscribe(v => {
+                // this.onChange.emit('valueChangess');
+                this._cd.markForCheck();
+            });
+        }
 
         if (this.required) {
             this.validators.push(Validators.required);
@@ -212,8 +229,9 @@ export class FormFieldComponent
     }
 
     ngAfterViewInit(): void {
-        // this.validateErrorHandler();
-        // this.initFormControl();
+        this.validateErrorHandler();
+        this.initFormControl();
+        this.updateControlProperties();
         this._cd.detectChanges();
     }
 
@@ -223,46 +241,45 @@ export class FormFieldComponent
     }
 
     hasErrors(): boolean {
-        // return this.editable && this._control && this._control.inErrorState;
-        return false;
+        return this._editable && this._control && this._control.inErrorState;
     }
 
-    // private validateFieldControlComponent() {
-    //     if (!this._control) {
-    //         throw new Error('fdp-form-field must contain component implemented FormFieldControl.');
-    //     }
+    private validateFieldControlComponent() {
+        if (!this._control) {
+            throw new Error('fdp-form-field must contain component implemented FormFieldControl.');
+        }
 
-    //     if (this._control.ngControl && !this.id) {
-    //         throw new Error('fdp-form-field must contain [id] binding.');
-    //     }
-    // }
+        if (this._control.ngControl && !this.id) {
+            throw new Error('fdp-form-field must contain [id] binding.');
+        }
+    }
 
-    // private validateErrorHandler() {
-    //     if (this.editable && this._control && this.hasValidators() && !this.i18Strings) {
-    //         throw new Error('Validation strings are required for the any provided validations.');
-    //     }
-    // }
+    private validateErrorHandler() {
+        if (this._editable && this._control && this.hasValidators() && !this.i18Strings) {
+            throw new Error('Validation strings are required for the any provided validations.');
+        }
+    }
 
     private hasValidators(): boolean {
         return this.validators && this.validators.length > 1;
     }
 
-    // private initFormControl() {
-    //     if (this._control && this._control.ngControl && this._control.ngControl.control) {
-    //         if (this.required) {
-    //             this.validators.push(Validators.required);
-    //         }
+    private initFormControl() {
+        if (this._control && this._control.ngControl && this._control.ngControl.control) {
+            if (this.required) {
+                this.validators.push(Validators.required);
+            }
 
-    //         this._control.ngControl.control.setValidators(Validators.compose(this.validators));
-    //         this.formGroup.addControl(this.id, this._control.ngControl.control);
-    //         // this._control.ngControl.control.reset();
-    //     }
-    // }
+            this._control.ngControl.control.setValidators(Validators.compose(this.validators));
+            this.formGroup.addControl(this.id, this._control.ngControl.control);
+            // this._control.ngControl.control.reset();
+        }
+    }
 
-    // private updateControlProperties() {
-    //     if (this._control && this.editable) {
-    //         this._control.id = this.id;
-    //         this._control.placeholder = this.placeholder;
-    //     }
-    // }
+    private updateControlProperties() {
+        if (this._control && this._editable) {
+            this._control.id = this.id;
+            this._control.placeholder = this.placeholder;
+        }
+    }
 }

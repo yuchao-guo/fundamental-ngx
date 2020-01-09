@@ -6,8 +6,7 @@ import { PlatformButtonHeaderComponent } from './component-docs/platform-button/
 import { ApiComponent } from './../documentation/core-helpers/api/api.component';
 import { API_FILES } from './api-files';
 import { NewComponentComponent } from './component-docs/new-component/new-component.component';
-
-
+import { LabelPageComponent } from './component-docs/label/labelpage.component';
 
 export const ROUTES: Routes = [
     {
@@ -18,12 +17,17 @@ export const ROUTES: Routes = [
             { path: 'home', component: PlatformHomeComponent },
             { path: 'new-component', component: NewComponentComponent },
             {
-                path: 'button', component: PlatformButtonHeaderComponent, children: [
+                path: 'button',
+                component: PlatformButtonHeaderComponent,
+                children: [
                     { path: '', component: PlatformButtonDocsComponent },
                     { path: 'api', component: ApiComponent, data: { content: API_FILES.button } }
                 ]
+            },
+            {
+                path: 'label',
+                component: LabelPageComponent
             }
         ]
     }
-
 ];
