@@ -61,6 +61,11 @@ import { StackblitzService } from '../documentation/core-helpers/stackblitz/stac
 import { FundamentalNgxCoreModule } from '@fundamental-ngx/core';
 import { FundamentalNgxPlatformModule } from '@fundamental-ngx/platform';
 
+import { PlatformRadioGroupHeaderComponent } from './component-docs/platform-forms/radio-group/platform-radio-group-header/platform-radio-group-header.component';
+import { PlatformRadioGroupListItemsExampleComponent } from './component-docs/platform-forms/radio-group/platform-radio-group-examples/platform-radio-group-list-items-examples.component';
+import { PlatformRadioGroupListExampleComponent } from './component-docs/platform-forms/radio-group/platform-radio-group-examples/platform-radio-group-list-examples.component';
+import { PlatformRadioGroupDocsComponent } from './component-docs/platform-forms/radio-group/platform-radio-group-docs.component';
+
 @NgModule({
     declarations: [
         PlatformDocumentationComponent,
@@ -105,7 +110,11 @@ import { FundamentalNgxPlatformModule } from '@fundamental-ngx/platform';
         PlatformSelectTypesDefaultExampleComponent,
         PlatformSelectTypesNoBorderExampleComponent,
         PlatformSelectTypesSplitExampleComponent,
-        PlatformSelectTypesWithIconExampleComponent
+        PlatformSelectTypesWithIconExampleComponent,
+        PlatformRadioGroupHeaderComponent,
+        PlatformRadioGroupListItemsExampleComponent,
+        PlatformRadioGroupListExampleComponent,
+        PlatformRadioGroupDocsComponent
     ],
     imports: [
         FundamentalNgxCoreModule,
