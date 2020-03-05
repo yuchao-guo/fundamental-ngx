@@ -1,31 +1,37 @@
 <form [formGroup]="customForm" class="flex-form">
-    <p>Example 1: Radio Buttons Types</p>
+    <p>Example 4: Radio Buttons Types</p>
     <fieldset fd-fieldset>
-        <fdp-radio-group [name]="'radio1'" [list]="items" [isInline]="false" formControlName="example1">
+        <fdp-radio-group [name]="'radio1'" [list]="items" [isInline]="false" formControlName="example4">
         </fdp-radio-group>
     </fieldset>
-    <p>Example 2: Radio Buttons Compact</p>
+    <p>Example 5: Radio Buttons Types in Compact Size</p>
     <fieldset fd-fieldset>
-        <fdp-radio-group [name]="'radio1'" [list]="itemsCompact" [isInline]="false" formControlName="example2">
+        <fdp-radio-group
+            [name]="'radio2'"
+            [size]="'compact'"
+            [list]="itemsCompact"
+            [isInline]="false"
+            formControlName="example5"
+        >
         </fdp-radio-group>
     </fieldset>
-    <p>Example 3: Radio Buttons Disabled</p>
+    <p>Example 6: Radio Buttons as Disabled</p>
     <fieldset fd-fieldset>
-        <fdp-radio-group [name]="'radio1'" [list]="itemsDisabled" [isInline]="false" formControlName="example3">
+        <fdp-radio-group [name]="'radio3'" [list]="itemsDisabled" [isInline]="false" formControlName="example6">
         </fdp-radio-group>
     </fieldset>
-    <p>Example 4: Radio Buttons Inline</p>
+    <p>Example 7: Radio Buttons Inline layout</p>
     <fieldset fd-fieldset>
-        <fdp-radio-group [name]="'radio1'" [list]="items" [isInline]="true" formControlName="example4">
+        <fdp-radio-group [name]="'radio4'" [list]="items" [isInline]="true" formControlName="example7">
         </fdp-radio-group>
     </fieldset>
 </form>
 <div>
-    Example 1: {{ customForm.value.example1 }}
+    Example 4 selelected value: {{ customForm.value.example4 }}
     <br />
-    Example 2: {{ customForm.value.example2 }}
+    Example 5 selelected value: {{ customForm.value.example5 }}
     <br />
-    Example 3: {{ customForm.value.example3 }}
+    Example 6 selelected value: {{ customForm.value.example6 }}
     <br />
-    Example 4: {{ customForm.value.example4 }}
+    Example 7 selelected value: {{ customForm.value.example7 }}
 </div>
