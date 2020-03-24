@@ -54,6 +54,7 @@ import { PlatformRadioGroupListItemsExampleComponent } from './component-docs/pl
 import { PlatformRadioGroupListExampleComponent } from './component-docs/platform-forms/radio-group/platform-radio-group-examples/platform-radio-group-list-examples.component';
 import { PlatformRadioGroupDocsComponent } from './component-docs/platform-forms/radio-group/platform-radio-group-docs.component';
 import { PlatformRadioGroupContentExampleComponent } from './component-docs/platform-forms/radio-group/platform-radio-group-examples/platform-radio-group-content-examples.component';
+import { PlatformRadioGroupDisabledExampleComponent } from './component-docs/platform-forms/radio-group/platform-radio-group-examples/platform-radio-group-disabled-examples.component';
 
 import { PlatformSelectDocsComponent } from './component-docs/platform-select/platform-select-docs.component';
 import { PlatformSelectHeaderComponent } from './component-docs/platform-select/platform-select-header/platform-select-header.component';
@@ -114,6 +115,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
         PlatformRadioGroupListItemsExampleComponent,
         PlatformRadioGroupListExampleComponent,
         PlatformRadioGroupContentExampleComponent,
+        PlatformRadioGroupDisabledExampleComponent,
         PlatformRadioGroupDocsComponent
     ],
     imports: [

@@ -8,7 +8,7 @@ import { PlatformMenuModule } from './components/menu/menu.module';
 import { PlatformSelectModule } from './components/select/select.module';
 import { PlatformLinkModule } from './components/link/link.module';
 import { PlatformRadioGroupModule } from './components/form/radio-group/radio-group.module';
-import { PlatformRadioButtonModule } from './components/form/radio/radio.module';
+import { PlatformRadioButtonModule } from './components/form/radio-group/radio/radio.module';
 
 @NgModule({
     imports: [CommonModule, FundamentalNgxCoreModule],

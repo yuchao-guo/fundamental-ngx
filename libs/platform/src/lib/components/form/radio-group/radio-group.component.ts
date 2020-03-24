@@ -2,25 +2,23 @@ import {
     EventEmitter,
     Component,
     ContentChildren,
-    ViewChildren,
     QueryList,
     Input,
     ChangeDetectorRef,
-    forwardRef,
     ChangeDetectionStrategy,
     AfterViewInit,
-    AfterViewChecked,
     Output,
     Self,
-    Optional
+    Optional,
+    ViewChildren,
 } from '@angular/core';
-import { ControlValueAccessor, NgControl } from '@angular/forms';
+import { NgControl, NgForm } from '@angular/forms';
 import { stateType } from '@fundamental-ngx/core';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
-import { PlatformRadioButtonComponent } from '../radio/radio.component';
+import { PlatformRadioButtonComponent } from './radio/radio.component';
 import { SelectItem } from '../data-model';
-import { FormFieldControl, InputSize } from '../form-control';
+import { CollectionBaseInput } from '../collection-base.input';
 
 // Increasing integer for generating unique ids for radio components.
 let nextUniqueId = 0;
@@ -29,28 +27,11 @@ let nextUniqueId = 0;
     selector: 'fdp-radio-group',
     templateUrl: './radio-group.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    providers: [
-        {
-            provide: FormFieldControl,
-            useExisting: forwardRef(() => RadioGroupComponent),
-            multi: true
-        }
-    ]
 })
-export class RadioGroupComponent implements ControlValueAccessor, AfterViewInit, AfterViewChecked {
+export class RadioGroupComponent extends CollectionBaseInput implements AfterViewInit {
+    /** uniqly generated, if value not provided for id */
     @Input()
     id: string = `radio-group-${nextUniqueId++}`;
-
-    /** Name of the radio button group. All radio buttons inside this group will use this name. */
-    @Input()
-    name: string = `radio-group-${nextUniqueId++}`;
-
-    /**
-     * Value for the radio-group. Should equal the value of the selected radio button if there is
-     * a corresponding radio button with a matching value.
-     */
-    @Input()
-    value: any;
 
     /**
      * values of radio buttons. type will be of SelectItem or String
@@ -59,24 +40,20 @@ export class RadioGroupComponent implements ControlValueAccessor, AfterViewInit,
     list: Array<SelectItem | string>;
 
     /**
-     * size of radio buttons. compact|cozy
-     */
-    @Input()
-    size: InputSize;
-
-    /**
      * Type of Radio buttons.
      */
     @Input()
     state: stateType = 'default';
 
-    /** Whether the radio group is disabled */
+    /** selects radio button with this value */
     @Input()
-    get disabled(): boolean {
-        return this._disabled;
+    get value(): any {
+        return this._value;
     }
-    set disabled(isdisabled: boolean) {
-        this._disabled = isdisabled;
+    set value(newValue: any) {
+        super.setValue(newValue);
+        this._value = newValue;
+        this.writeValue(newValue);
     }
 
     /**
@@ -96,11 +73,10 @@ export class RadioGroupComponent implements ControlValueAccessor, AfterViewInit,
 
     /** Child radio buttons <fdp-radio-buttons> passed as contents*/
     @ContentChildren(PlatformRadioButtonComponent)
-    radioButtons: QueryList<PlatformRadioButtonComponent>;
+    contentRadioButtons: QueryList<PlatformRadioButtonComponent>;
 
-    /** radio buttons passed as list of values ['button1', 'button2'] */
     @ViewChildren(PlatformRadioButtonComponent)
-    viewradioButtons: QueryList<PlatformRadioButtonComponent>;
+    viewRadioButtons: QueryList<PlatformRadioButtonComponent>;
 
     /** Value change event for outer element */
     @Output()
@@ -109,22 +85,15 @@ export class RadioGroupComponent implements ControlValueAccessor, AfterViewInit,
     /** The currently selected radio button. Should match value. */
     private _selected: PlatformRadioButtonComponent | null = null;
 
-    private _disabled: boolean = false;
-
-    /** if view is ready with child */
-    _isInitialized: boolean = false;
-
     private destroy$ = new Subject<boolean>();
 
-    constructor(private _changeDetector: ChangeDetectorRef, @Optional() @Self() public ngControl: NgControl) {
-        if (ngControl) {
-            this.ngControl.valueAccessor = this;
-        }
+    constructor(
+        protected _changeDetector: ChangeDetectorRef,
+        @Optional() @Self() public ngControl: NgControl,
+        @Optional() @Self() public ngForm: NgForm
+    ) {
+        super(_changeDetector, ngControl, ngForm);
     }
-
-    /** controlvalueaccessor */
-    onChange = (_: any) => {};
-    onTouched = () => {};
 
     /**
      * Initialize properties once content children are available.
@@ -135,9 +104,18 @@ export class RadioGroupComponent implements ControlValueAccessor, AfterViewInit,
             throw new Error('fdp-radio-button-group must contain a fdp-radio-button');
         }
 
-        if (this.radioButtons && this.radioButtons.length > 0) {
-            this.selectGivenValue(this.radioButtons);
+        if (this.contentRadioButtons && this.contentRadioButtons.length > 0) {
+            this.selectGivenValue(this.contentRadioButtons);
         }
+    }
+
+    ngAfterViewInit() {
+        // Mark this component as initialized in AfterViewInit
+        // because all views with contents will be initialised After this
+        setTimeout(() => {
+            this._initContentRadioButtons();
+            this._initViewRadioButtons();
+        });
     }
 
     /**
@@ -145,63 +123,61 @@ export class RadioGroupComponent implements ControlValueAccessor, AfterViewInit,
      */
     private validateRadioButtons(): boolean {
         return (
-            this.radioButtons.filter(item => !(item instanceof PlatformRadioButtonComponent || item['renderer']))
-                .length === 0
+            this.contentRadioButtons.filter(
+                (item) => !(item instanceof PlatformRadioButtonComponent || item['renderer'])
+            ).length === 0
         );
     }
 
-    ngAfterViewInit() {
-        // Mark this component as initialized in AfterViewInit
-        // because all views with contents will be initialised After this
-        setTimeout(() => {
-            this._initRadioButtons(this.value);
-        });
-    }
-
-    ngAfterViewChecked() {
-        // if value of group radio provided already in template,
-        // then select the given value radio button
-        if (this.viewradioButtons && this.viewradioButtons.length > 0) {
-            this.selectGivenValue(this.viewradioButtons);
-        }
-    }
     /** selects the radio button with initial supplied value */
     private selectGivenValue(buttons: QueryList<PlatformRadioButtonComponent>) {
-        buttons.forEach(button => {
-            if (button.value === this.value) {
+        buttons.forEach((button) => {
+            if (button.value === this._value) {
                 button.checkRadioButton();
                 this._selected = button;
             }
         });
     }
+
     /**
      * Initializing all content radio buttons with given properties and
      * subscribing to radio button radiobuttonclicked event
      */
-    private _initRadioButtons(value: any) {
-        if (this.radioButtons) {
-            this.radioButtons.forEach(button => {
-                this._setButtonProperties(button);
-                if (button.value === this.value) {
+    private _initViewRadioButtons() {
+        if (this.viewRadioButtons) {
+            this.viewRadioButtons.forEach((button) => {
+                if (button.value === this._value) {
                     button.checkRadioButton();
                     this._selected = button;
+                    this.onChange(this._value);
                 }
-                button.radiobuttonclicked
-                    .pipe(takeUntil(this.destroy$))
-                    .subscribe(ev => this._selectedRadioButtonChanged(ev));
             });
             this._changeDetector.detectChanges();
-
-            if (this._disabled) {
-                this.setDisabledState(this._disabled);
-            }
         }
-        this._isInitialized = true;
+    }
+
+    /**
+     * Initializing all content radio buttons with given properties and
+     * subscribing to radio button radiobuttonclicked event
+     */
+    private _initContentRadioButtons() {
+        if (this.contentRadioButtons) {
+            this.contentRadioButtons.forEach((button) => {
+                this._setButtonProperties(button);
+                if (button.value === this._value) {
+                    button.checkRadioButton();
+                    this._selected = button;
+                    this.onChange(this._value);
+                }
+                button.click.pipe(takeUntil(this.destroy$)).subscribe((ev) => this._selectedRadioButtonChanged(ev));
+            });
+            this._changeDetector.detectChanges();
+        }
     }
 
     private _setButtonProperties(button: PlatformRadioButtonComponent) {
         button.name = this.name;
-        button.disabled = this.disabled;
+        button.disabled = this._disabled;
         button.size = this.size;
         button.state = this.state;
     }
@@ -214,49 +190,29 @@ export class RadioGroupComponent implements ControlValueAccessor, AfterViewInit,
             }
             this._selected = radiobutton;
         }
-        this.value = radiobutton.value;
+        this._value = radiobutton.value;
         this.change.emit(radiobutton);
-        this.onChange(this.value);
+        this.onChange(this._value);
         this._changeDetector.markForCheck();
     }
 
-    viewRadioButtonSelected(event: PlatformRadioButtonComponent) {
+    radioButtonSelected(event: PlatformRadioButtonComponent) {
         this._selectedRadioButtonChanged(event);
     }
-    /** ControlValueAccessor implementation*/
+
+    /**
+     * controlvalue accessor
+     */
     writeValue(value: any): void {
         if (value) {
-            this.value = value;
-            this._changeDetector.detectChanges();
+            this._value = value;
             this.onChange(value);
         }
     }
 
-    /** ControlValueAccessor implementation*/
-    setDisabledState(isDisabled: boolean) {
-        this._disabled = isDisabled;
-        if (this.radioButtons) {
-            this.radioButtons.forEach(button => {
-                button.disabled = isDisabled;
-            });
-            this._changeDetector.detectChanges();
-        }
-    }
-
-    /** ControlValueAccessor implementation*/
-    registerOnChange(fn: (_: any) => void): void {
-        this.onChange = fn;
-    }
-
-    /** ControlValueAccessor implementation*/
-    registerOnTouched(fn: () => void): void {
-        if (this.radioButtons) {
-            this.radioButtons.forEach(button => {
-                button.registerOnTouched(fn);
-            });
-        }
-    }
-
+    /**
+     * @hidden
+     */
     public ngOnDestroy(): void {
         this.destroy$.next(true);
         this.destroy$.complete();
