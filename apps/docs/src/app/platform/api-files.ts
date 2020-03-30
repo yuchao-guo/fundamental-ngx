@@ -7,7 +7,7 @@
 export const API_FILES = {
     button: ['buttoncomponent'],
     actionbar: ['actionbarcomponent'],
-    menu: ['MenuComponent', 'MenuItemComponent'],
+    menu: ['MenuComponent', 'MenuItemComponent', 'MenuTriggerDirective'],
     link: ['LinkComponent'],
     radioGroup: ['RadioGroupComponent']
 };
