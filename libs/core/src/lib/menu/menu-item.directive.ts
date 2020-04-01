@@ -10,13 +10,12 @@ import { DefaultMenuItem } from './default-menu-item';
     selector: '[fd-menu-item]',
 })
 export class MenuItemDirective implements DefaultMenuItem {
-
     /** @hidden*/
     @HostBinding('class.fd-menu__item')
     fdMenuItemClass: boolean = true;
 
     /** @hidden */
-    constructor (public itemEl: ElementRef) {}
+    constructor(public itemEl: ElementRef) {}
 
     public focus(): void {
         this.itemEl.nativeElement.focus();
