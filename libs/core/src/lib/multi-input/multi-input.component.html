@@ -12,11 +12,10 @@
                     [state]="state"
                     [buttonFocusable]="buttonFocusable"
                     [button]="true"
-                    [glyph]="glyph"
                     [compact]="compact"
                     [disabled]="disabled"
                     (click)="openChangeHandle(!open)">
-                    <fd-tokenizer [compact]="compact" class="fd-multi-input-tokenizer">
+                    <fd-tokenizer [compact]="compact" class="fd-multi-input-tokenizer" [glyph]="glyph">
                         <fd-token
                             *ngFor="let token of selected"
                             [compact]="compact"
@@ -29,6 +28,7 @@
                                #searchInputElement
                                [placeholder]="placeholder"
                                [(ngModel)]="searchTerm"
+                               [compact]="compact"
                                [ngClass]="{'fd-input--compact': compact}"
                                (ngModelChange)="handleSearchTermChange()"
                                (keydown)="handleInputKeydown($event)">
@@ -44,7 +44,7 @@
                         </fd-checkbox>
                     </li>
                     <li fd-list-item class="fd-multi-input-show-all">
-                        <a class="fd-link" (click)="showAllClicked($event)" href>Show All ({{dropdownValues.length}})</a>
+                        <a fd-link (click)="showAllClicked($event)" href>Show All ({{dropdownValues.length}})</a>
                     </li>
                 </ul>
                 <ng-content></ng-content>

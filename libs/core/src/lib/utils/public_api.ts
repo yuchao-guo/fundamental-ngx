@@ -1,4 +1,4 @@
-export * from './directives/only-digits.directive';
+export * from './directives/only-digits/only-digits.directive';
 export * from './pipes/pipe.module';
 export * from './pipes/displayFn.pipe';
 export * from './pipes/two-digits.pipe';
@@ -18,4 +18,4 @@ export * from './dynamic-component/dynamic-component.service';
 export * from './functions';
 export * from './datatypes/hash.datatype';
 export * from './services/rtl.service';
-export * from './keyboard-unification';
+export * from './functions/keyboard-unification';
