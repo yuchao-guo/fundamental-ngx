@@ -1,33 +1,36 @@
-<fd-menu fd-menu-addon>
+<fd-menu>
     <ul fd-menu-list>
-        <li>
-            <a href="" fd-menu-item>
-                <fd-icon fd-menu-item-addon [glyph]="'cart-5'"></fd-icon>
-                Option 1
+        <li fd-menu-item>
+            <a fd-menu-link>
+                <fd-icon fd-menu-item-addon-before [glyph]="'cart'"></fd-icon>
+                <span fd-menu-title>Option 1 with 1 icon</span>
             </a>
         </li>
-        <li>
-            <a href="" fd-menu-item>
-                <fd-icon fd-menu-item-addon [glyph]="'accept'"></fd-icon>
-                Option 2
+        <li fd-menu-item>
+            <a fd-menu-link>
+                <fd-icon fd-menu-item-addon-before [glyph]="'accept'"></fd-icon>
+                <span fd-menu-title>Option 2 with 2 icons</span>
+                <fd-icon fd-menu-item-addon-after [glyph]="'lightbulb'"></fd-icon>
             </a>
         </li>
-        <li>
-            <a href="" fd-menu-item>
-                <fd-icon fd-menu-item-addon [glyph]="'menu'"></fd-icon>
-                Option 3
+        <li fd-menu-item>
+            <a fd-menu-link>
+                <fd-icon fd-menu-item-addon-before [glyph]="'menu'"></fd-icon>
+                <span fd-menu-title>Option 3 with 2 icons and super long title</span>
+                <fd-icon fd-menu-item-addon-after [glyph]="'history'"></fd-icon>
             </a>
         </li>
-        <li>
-            <a href="" fd-menu-item>
-                <input type="checkbox" fd-menu-item-addon>
-                Option 4
+        <li fd-menu-item>
+            <a fd-menu-link>
+                <!-- this below checkbox example should not be there -->
+                <!-- <input type="checkbox" fd-menu-item-addon /> -->
+                <span fd-menu-title>Option 4 with only secondary icon</span>
+                <fd-icon fd-menu-item-addon-after [glyph]="'grid'"></fd-icon>
             </a>
         </li>
-        <li>
-            <a href="" fd-menu-item>
-                <fd-icon fd-menu-item-addon [glyph]="'cart'"></fd-icon>
-                Option 5
+        <li fd-menu-item>
+            <a fd-menu-link>
+                <span fd-menu-title>Option 5 with no icon</span>
             </a>
         </li>
     </ul>

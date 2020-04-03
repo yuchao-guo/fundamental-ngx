@@ -4,12 +4,12 @@ import { MenuComponent } from './menu.component';
 import { AfterViewInit, Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { MenuModule } from './menu.module';
 import { MenuKeyboardService } from './menu-keyboard.service';
-import { MenuItemDirective } from './menu-item.directive';
+import { MenuItemDirective } from './menu-item/menu-item.directive';
 
 @Component({
     selector: 'fd-menu-test',
     template: `
-        <fd-menu fd-menu-addon>
+        <fd-menu>
             <ul fd-menu-list>
                 <li fd-menu-item #element1>
                     <div fd-menu-item-addon></div>
@@ -39,9 +39,8 @@ export class TestMenuComponent implements AfterViewInit {
     @ViewChild('elementOutOfScope') elementOutOfScope: ElementRef;
     @ViewChildren(MenuItemDirective)
     menuItems: QueryList<MenuItemDirective>;
-    public ngAfterViewInit(): void { }
+    public ngAfterViewInit(): void {}
 }
-
 
 describe('MenuComponent', () => {
     let items: QueryList<MenuItemDirective>;
@@ -82,7 +81,7 @@ describe('MenuComponent', () => {
     it('should focus second element', () => {
         const list = elements.map(element => element.nativeElement);
         spyOn(list[1], 'focus');
-        const event: any = { key: 'ArrowDown', preventDefault: () => { } };
+        const event: any = { key: 'ArrowDown', preventDefault: () => {} };
         service.keyDownHandler(event, 0, items.toArray());
         expect(list[1].focus).toHaveBeenCalled();
     });
@@ -90,25 +89,29 @@ describe('MenuComponent', () => {
     it('Should use default function and select last element, when encounter a beginning and arrow up', () => {
         const list = elements.map(element => element.nativeElement);
         spyOn(list[3], 'focus');
-        const event: any = { key: 'ArrowUp', preventDefault: () => { } };
+        const event: any = { key: 'ArrowUp', preventDefault: () => {} };
         service.keyDownHandler(event, 0, items.toArray());
         expect(list[3].focus).toHaveBeenCalled();
     });
 
     it('Should use custom after focus function which and focus out of scope element', () => {
         const _elementOutOfScope = elementOutOfScope.nativeElement;
-        service.focusEscapeAfterList = () => { _elementOutOfScope.focus(); };
+        service.focusEscapeAfterList = () => {
+            _elementOutOfScope.focus();
+        };
         spyOn(_elementOutOfScope, 'focus');
-        const event: any = { key: 'ArrowDown', preventDefault: () => { } };
+        const event: any = { key: 'ArrowDown', preventDefault: () => {} };
         service.keyDownHandler(event, 3, items.toArray());
         expect(_elementOutOfScope.focus).toHaveBeenCalled();
     });
 
     it('Should use custom before focus function which and focus out of scope element', () => {
         const _elementOutOfScope = elementOutOfScope.nativeElement;
-        service.focusEscapeBeforeList = () => { _elementOutOfScope.focus(); };
+        service.focusEscapeBeforeList = () => {
+            _elementOutOfScope.focus();
+        };
         spyOn(_elementOutOfScope, 'focus');
-        const event: any = { key: 'ArrowUp', preventDefault: () => { } };
+        const event: any = { key: 'ArrowUp', preventDefault: () => {} };
         service.keyDownHandler(event, 0, items.toArray());
         expect(_elementOutOfScope.focus).toHaveBeenCalled();
     });

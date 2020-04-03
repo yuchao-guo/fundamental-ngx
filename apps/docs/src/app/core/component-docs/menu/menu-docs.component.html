@@ -12,8 +12,8 @@
     Menu with Addon
 </fd-docs-section-title>
 <description
-    >This is an additional container that can be used for an icon or checkbox before the menu item text. This can be
-    achieved with the directives <code>fd-menu-item-addon</code> and <code>fd-menu-addon</code>
+    >This is an additional container that can be used for an icon before or after the menu item text. This can be
+    achieved with the directives <code>fd-menu-item-addon-before</code> and <code>fd-menu-item-addon-after</code>
 </description>
 <component-example>
     <fd-menu-addon-example></fd-menu-addon-example>
@@ -21,7 +21,7 @@
 <code-example [exampleFiles]="menuAddon"></code-example>
 
 <separator></separator>
-
+<!-- 
 <fd-docs-section-title [id]="'group'" [componentName]="'menu'">
     Menu with Group
 </fd-docs-section-title>
@@ -30,7 +30,17 @@
 </component-example>
 <code-example [exampleFiles]="menuGroup"></code-example>
 
-<separator></separator>
+<separator></separator> -->
+<fd-docs-section-title [id]="'menuObject'" [componentName]="'menu'">
+        Menu specified as a configuration
+    </fd-docs-section-title>
+    <description>Menu with all its attributes specified in a configuration rather than writing in template.</description>
+    <component-example>
+        <fd-menu-object-example></fd-menu-object-example>
+    </component-example>
+    <code-example [exampleFiles]="menuObject"></code-example>
+    
+    <separator></separator>
 
 <fd-docs-section-title [id]="'optionalSeparator'" [componentName]="'menu'">
     Menu with Optional Separator
@@ -40,6 +50,41 @@
     <fd-menu-separator-example></fd-menu-separator-example>
 </component-example>
 <code-example [exampleFiles]="menuSeparator"></code-example>
+
+<separator></separator>
+
+<fd-docs-section-title [id]="'size'" [componentName]="'menu'">
+    Menu with Different Sizes
+</fd-docs-section-title>
+<description
+    >Menu can be in compact('desktop') size or cozy size(tablet is default and 'mobile' is for mobile).</description
+>
+<component-example>
+    <fd-menu-size-example></fd-menu-size-example>
+</component-example>
+<code-example [exampleFiles]="menuSize"></code-example>
+
+<separator></separator>
+
+<fd-docs-section-title [id]="'submenu'" [componentName]="'menu'">
+    Menu with Submenu
+</fd-docs-section-title>
+<description>Menu can be opened with a submenu for further navigation and grouping.</description>
+<component-example>
+    <fd-menu-submenu-example></fd-menu-submenu-example>
+</component-example>
+<code-example [exampleFiles]="menuSubmenu"></code-example>
+
+<separator></separator>
+
+<fd-docs-section-title [id]="'contextual'" [componentName]="'menu'">
+    Contextual Menu
+</fd-docs-section-title>
+<description>Menu is generally opened with a popover.</description>
+<component-example>
+    <fd-contextual-menu-example></fd-contextual-menu-example>
+</component-example>
+<code-example [exampleFiles]="contextualMenu"></code-example>
 
 <separator></separator>
 

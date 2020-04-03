@@ -1,1 +1,8 @@
-<ng-content></ng-content>
+<nav class="fd-menu">
+    <ng-container *ngIf="!menuConfiguration">
+        <ng-content></ng-content>
+    </ng-container>
+    <ng-container *ngIf="menuConfiguration">
+        <fd-prepared-menu [list]="menuConfiguration"></fd-prepared-menu>
+    </ng-container>
+</nav>

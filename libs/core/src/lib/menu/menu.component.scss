@@ -1,1 +1,6 @@
-@import "~fundamental-styles/dist/menu";
+@import '~fundamental-styles/dist/menu';
+@import '~fundamental-styles/dist/icon';
+
+.fd-popover__body--no-arrow {
+    top: 0;
+}

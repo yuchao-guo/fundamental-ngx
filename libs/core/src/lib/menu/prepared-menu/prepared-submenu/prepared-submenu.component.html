@@ -1,0 +1,57 @@
+<ul fd-menu-sublist>
+    <ng-container *ngFor="let item of sublist?.items">
+        <li fd-menu-item [(expanded)]="item.expanded">
+            <!-- <ng-container *ngIf="first && item.list">
+                <a
+                    fd-menu-link
+                    *ngIf="item.link"
+                    [onClickCallback]="item.link.callback"
+                    [attr.href]="item.link.href ? item.link.href : null"
+                    [routerLink]="item.link.routerLink ? item.link.routerLink : []"
+                >
+                    <fd-icon fd-menu-item-addon-before *ngIf="item.link.icon" [glyph]="item.link.icon"></fd-icon>
+                    <span fd-menu-title>{{ item.link.title }} pakchik</span>
+                    <fd-icon fd-menu-item-addon-after [submenuIcon]="true" *ngIf="item.list"></fd-icon> -->
+            <!-- </a> -->
+            <!-- <fd-prepared-menu
+                    [first]="false"
+                    [hasChildMenu]="item.list ? subMenu : ''"
+                    *ngIf="item.list"
+                    [list]="item.list"
+                ></fd-prepared-menu> -->
+            <!-- <ng-container *ngIf="item.list">
+                    <ng-container
+                        *ngTemplateOutlet="subMenu; context: {$implicit: this, first: false, item: item }"
+                    ></ng-container>
+                </ng-container> -->
+            <!-- </ng-container>
+            <fd-prepared-submenu [first]="false" *ngIf="item.list" [sublist]="item.list"></fd-prepared-submenu> -->
+            <!-- </fd-nested-list-popover> -->
+
+            <!-- <ng-container *ngIf="!first || !item.list"> -->
+            <a
+                fd-menu-link
+                *ngIf="item.link"
+                [onClickCallback]="item.link.callback"
+                [attr.href]="item.link.href ? item.link.href : null"
+                [routerLink]="item.link.routerLink ? item.link.routerLink : []"
+            >
+                <fd-icon fd-menu-item-addon-before *ngIf="item.link.icon" [glyph]="item.link.icon"></fd-icon>
+                <span fd-menu-title>{{ item.link.title }}</span>
+                <fd-icon
+                    fd-menu-item-addon-after
+                    [submenuIcon]="item.list && !item.link.secondaryIcon"
+                    [glyph]="submenuIcon ? '' : item.link.secondaryIcon"
+                    *ngIf="item.list"
+                ></fd-icon>
+            </a>
+            <fd-prepared-submenu *ngIf="item.list" [sublist]="item.list"></fd-prepared-submenu>
+            <!-- <ng-container *ngIf="item.list">
+                    <ng-container
+                        *ngTemplateOutlet="subMenu; context: {$implicit: this, first: false, item: item }"
+                    ></ng-container>
+                </ng-container> -->
+            <!-- </ng-container> -->
+        </li>
+    </ng-container>
+</ul>

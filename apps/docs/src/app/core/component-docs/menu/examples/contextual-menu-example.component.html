@@ -1,0 +1,33 @@
+<h3>Basic menu in popover context</h3>
+
+<fd-popover placement="bottom" [closeOnOutsideClick]="true">
+    <fd-popover-control>
+        <button fd-button>Button</button>
+    </fd-popover-control>
+    <fd-popover-body>
+        <!-- <fd-menu>
+                <ul fd-menu-list>
+                    <li *ngFor="let option of menu1">
+                        <a fd-menu-item [attr.href]="option.url">{{option.text}}</a>
+                    </li>
+                </ul>
+            </fd-menu> -->
+        <fd-menu>
+            <ul fd-menu-list>
+                <li fd-menu-item tabindex="0" role="option">
+                    <a fd-menu-link><span fd-menu-title>Option 1</span></a>
+                </li>
+                <li fd-menu-item tabindex="0" role="option">
+                    <a fd-menu-link><span fd-menu-title>Option 2</span></a>
+                </li>
+                <li fd-menu-item tabindex="0" role="option">
+                    <a fd-menu-link
+                        ><span fd-menu-title
+                            >Option 3 with super long long long long long long long long long long long text</span
+                        ></a
+                    >
+                </li>
+            </ul>
+        </fd-menu>
+    </fd-popover-body>
+</fd-popover>

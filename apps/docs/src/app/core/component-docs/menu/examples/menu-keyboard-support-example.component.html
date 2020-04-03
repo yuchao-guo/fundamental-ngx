@@ -1,16 +1,15 @@
-
 <button fd-button (click)="focusFirst()">Focus First Element</button>
 
 <fd-menu>
     <ul fd-menu-list>
         <li fd-menu-item (click)="onClick()" tabIndex="0" (keydown)="handleKeyDown($event, 0)">
-            Option 1
+            <a fd-menu-link><span fd-menu-title>Option 1</span></a>
         </li>
         <li fd-menu-item (click)="onClick()" tabIndex="0" (keydown)="handleKeyDown($event, 1)">
-            Option 2
+            <a fd-menu-link><span fd-menu-title>Option 2</span></a>
         </li>
         <li fd-menu-item (click)="onClick()" tabIndex="0" (keydown)="handleKeyDown($event, 2)">
-            Option 3
+            <a fd-menu-link><span fd-menu-title>Option 3</span></a>
         </li>
     </ul>
 </fd-menu>
