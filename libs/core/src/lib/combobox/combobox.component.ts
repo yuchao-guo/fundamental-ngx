@@ -1,6 +1,7 @@
 import {
     AfterViewInit,
-    ChangeDetectionStrategy, ChangeDetectorRef,
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
     Component,
     ElementRef,
     EventEmitter,
@@ -18,7 +19,7 @@ import {
     ViewEncapsulation
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { MenuItemDirective } from '../menu/menu-item.directive';
+import { MenuItemDirective } from '../menu/menu-item/menu-item.directive';
 import { ComboboxItem } from './combobox-item';
 import { MenuKeyboardService } from '../menu/menu-keyboard.service';
 import { Subject } from 'rxjs';
@@ -59,7 +60,6 @@ import { PopoverComponent } from '../popover/popover.component';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ComboboxComponent implements ControlValueAccessor, OnInit, OnChanges, AfterViewInit, OnDestroy {
-
     /** Values to be filtered in the search input. */
     @Input()
     dropdownValues: any[] = [];
@@ -170,7 +170,6 @@ export class ComboboxComponent implements ControlValueAccessor, OnInit, OnChange
     @Output()
     readonly openChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-
     /** @hidden */
     @ViewChildren(MenuItemDirective)
     menuItems: QueryList<MenuItemDirective>;
@@ -200,16 +199,16 @@ export class ComboboxComponent implements ControlValueAccessor, OnInit, OnChange
     private readonly onDestroy$: Subject<void> = new Subject<void>();
 
     /** @hidden */
-    onChange: any = () => { };
+    onChange: any = () => {};
 
     /** @hidden */
-    onTouched: any = () => { };
+    onTouched: any = () => {};
 
     constructor(
         private elRef: ElementRef,
         private menuKeyboardService: MenuKeyboardService,
         private cdRef: ChangeDetectorRef
-    ) { }
+    ) {}
 
     /** @hidden */
     ngOnInit(): void {
@@ -237,7 +236,7 @@ export class ComboboxComponent implements ControlValueAccessor, OnInit, OnChange
             .pipe(takeUntil(this.onDestroy$))
             .subscribe(index => this.onMenuClickHandler(index));
         this.menuKeyboardService.focusEscapeBeforeList = () => this.searchInputElement.nativeElement.focus();
-        this.menuKeyboardService.focusEscapeAfterList = () => { };
+        this.menuKeyboardService.focusEscapeAfterList = () => {};
 
         if (this.inShellbar) {
             this.searchInputElement.nativeElement.classList.add('fd-shellbar__input-group__input');
@@ -261,13 +260,15 @@ export class ComboboxComponent implements ControlValueAccessor, OnInit, OnChange
 
     /** @hidden */
     onInputKeyupHandler(event: KeyboardEvent) {
-        if (this.openOnKeyboardEvent &&
+        if (
+            this.openOnKeyboardEvent &&
             this.inputText &&
             this.inputText.length &&
             event.key !== 'Escape' &&
             event.key !== ' ' &&
             event.key !== 'Tab' &&
-            event.key !== 'Enter') {
+            event.key !== 'Enter'
+        ) {
             this.isOpenChangeHandle(true);
         }
     }
@@ -370,7 +371,9 @@ export class ComboboxComponent implements ControlValueAccessor, OnInit, OnChange
         const searchLower = searchTerm.toLocaleLowerCase();
         return contentArray.filter(item => {
             if (item) {
-                return this.displayFn(item).toLocaleLowerCase().includes(searchLower);
+                return this.displayFn(item)
+                    .toLocaleLowerCase()
+                    .includes(searchLower);
             }
         });
     }
@@ -408,5 +411,4 @@ export class ComboboxComponent implements ControlValueAccessor, OnInit, OnChange
             this.displayedValues = this.dropdownValues;
         }
     }
-
 }
