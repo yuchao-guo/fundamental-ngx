@@ -6,11 +6,12 @@ import * as formStateHtml from '!raw-loader!./examples/textarea-state-example.co
 import * as formGroupInputHtml from '!raw-loader!./examples/textarea-form-group-example.component.html';
 import * as formGroupInputScss from '!raw-loader!./examples/textarea-form-group-example.component.scss';
 import * as formGroupInputTs from '!raw-loader!./examples/textarea-form-group-example.component.ts';
+import * as formCounterHtml from '!raw-loader!./examples/textarea-counter-example.component.html';
 import { ExampleFile } from '../../../documentation/core-helpers/code-example/example-file';
 
 @Component({
     selector: 'app-input',
-    templateUrl: './textarea-docs.component.html'
+    templateUrl: './textarea-docs.component.html',
 })
 export class TextareaDocsComponent {
     textareaHtml: ExampleFile[] = [
@@ -18,7 +19,7 @@ export class TextareaDocsComponent {
             language: 'html',
             code: formHtml,
             fileName: 'textarea-example',
-        }
+        },
     ];
 
     textareaHelpHtml: ExampleFile[] = [
@@ -26,7 +27,7 @@ export class TextareaDocsComponent {
             language: 'html',
             code: formInlineHelpHtml,
             fileName: 'textarea-inline-help-example',
-        }
+        },
     ];
 
     textareaStatesHtml: ExampleFile[] = [
@@ -34,7 +35,7 @@ export class TextareaDocsComponent {
             language: 'html',
             code: formStateHtml,
             fileName: 'textarea-state-example',
-        }
+        },
     ];
 
     textareaFormGroup: ExampleFile[] = [
@@ -42,13 +43,21 @@ export class TextareaDocsComponent {
             language: 'html',
             code: formGroupInputHtml,
             fileName: 'textarea-form-group-example',
-            scssFileCode: formGroupInputScss
+            scssFileCode: formGroupInputScss,
         },
         {
             language: 'typescript',
             code: formGroupInputTs,
             fileName: 'textarea-form-group-example',
-            component: 'TextareaFormGroupExampleComponent'
-        }
+            component: 'TextareaFormGroupExampleComponent',
+        },
+    ];
+
+    textareaCounterHtml: ExampleFile[] = [
+        {
+            language: 'html',
+            code: formCounterHtml,
+            fileName: 'textarea-counter-example',
+        },
     ];
 }
