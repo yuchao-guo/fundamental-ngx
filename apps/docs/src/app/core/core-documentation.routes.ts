@@ -169,6 +169,13 @@ export const ROUTES: Routes = [
                 loadChildren: () => import('./component-docs/menu/menu-docs.module').then((m) => m.MenuDocsModule)
             },
             {
+                path: 'message-box',
+                loadChildren: () =>
+                    import('./component-docs/message-box/message-box-docs.module').then(
+                        (m) => m.MessageBoxDocsModule
+                    )
+            },
+            {
                 path: 'message-strip',
                 loadChildren: () =>
                     import('./component-docs/message-strip/message-strip-docs.module').then(

@@ -97,6 +97,7 @@ export const API_FILES = {
         'MenuTitleDirective',
         'MenuKeyboardService'
     ],
+    messageBox: ['MessageBoxComponent'],
     messageStrip: ['MessageStripComponent'],
     dialog: [
         'DialogService',
