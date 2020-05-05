@@ -82,6 +82,12 @@ import { FundamentalNgxCoreModule } from '@fundamental-ngx/core';
 import { FundamentalNgxPlatformModule } from '@fundamental-ngx/platform';
 
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { PlatformInfoLabelDocsComponent } from './component-docs/platform-info-label/platform-info-label-docs.component';
+import { PlatformInfoLabelHeaderComponent } from './component-docs/platform-info-label/platform-info-label-header/platform-info-label-header.component';
+import { PlatformInfoLabelExampleComponent,
+         PlatformInfoLableTextExampleComponent,
+         PlatformInfoLableTextIconExampleComponent,
+         PlatformInfoLableNumericIconExampleComponent } from './component-docs/platform-info-label/platform-info-label-example/platform-info-label-example.component';
 
 @NgModule({
     declarations: [
@@ -144,7 +150,14 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
         PlatformMenuButtonExampleComponent,
         PlatformMenuButtonCozyExampleComponent,
         PlatformMenuButtonCompactExampleComponent,
-        PlatformMenuButtonHeaderComponent
+        PlatformMenuButtonHeaderComponent,
+        PlatformInfoLabelDocsComponent,
+        PlatformInfoLabelHeaderComponent,
+        PlatformInfoLabelExampleComponent,
+        PlatformInfoLableNumericIconExampleComponent,
+        PlatformInfoLableTextExampleComponent,
+        PlatformInfoLableTextIconExampleComponent
+
     ],
     imports: [
         FundamentalNgxCoreModule,

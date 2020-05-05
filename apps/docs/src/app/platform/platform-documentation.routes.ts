@@ -22,6 +22,8 @@ import { PlatformRadioGroupHeaderComponent } from './component-docs/platform-for
 import { PlatformRadioGroupDocsComponent } from './component-docs/platform-forms/radio-group/platform-radio-group-docs.component';
 import { PlatformDocsSplitMenuButtonComponent } from './component-docs/platform-split-menu-button/platform-split-menu-button.component';
 import { PlatformDocsSplitMenuButtonHeaderComponent } from './component-docs/platform-split-menu-button/platform-split-menu-button-header/platform-split-menu-button-header.component';
+import { PlatformInfoLabelHeaderComponent } from './component-docs/platform-info-label/platform-info-label-header/platform-info-label-header.component';
+import { PlatformInfoLabelDocsComponent } from './component-docs/platform-info-label/platform-info-label-docs.component';
 
 export const ROUTES: Routes = [
     {
@@ -101,6 +103,14 @@ export const ROUTES: Routes = [
                 children: [
                     { path: '', component: PlatformDocsSplitMenuButtonComponent },
                     { path: 'api', component: ApiComponent, data: { content: API_FILES.splitMenuButton } }
+                ]
+            },
+            {
+                path: 'info-label',
+                component: PlatformInfoLabelHeaderComponent,
+                children: [
+                    { path: '', component: PlatformInfoLabelDocsComponent },
+                    { path: 'api', component: ApiComponent, data: { content: API_FILES.infoLabel } }
                 ]
             }
         ]
