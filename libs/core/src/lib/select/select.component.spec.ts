@@ -286,17 +286,18 @@ describe('SelectComponent', () => {
     });
 
     it('Should support alphanumerical keys focus', async () => {
+        fixture.componentInstance.value = 'value-1';
         component.open();
 
         await wait(fixture);
 
-        component['_elementRef'].nativeElement.dispatchEvent(new KeyboardEvent('keydown', {code: 'KeyV'}));
+        component['_elementRef'].nativeElement.dispatchEvent(new KeyboardEvent('keydown', {code: 'KeyT'}));
 
         await wait(fixture);
 
         expect(document.activeElement).toBe(component['_options'][1].getHtmlElement());
 
-        component['_elementRef'].nativeElement.dispatchEvent(new KeyboardEvent('keydown', {code: 'KeyV'}));
+        component['_elementRef'].nativeElement.dispatchEvent(new KeyboardEvent('keydown', {code: 'KeyT'}));
 
         await wait(fixture);
 
