@@ -2,6 +2,157 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.18.0-rc.0"></a>
+# [0.18.0-rc.0](https://github.com/SAP/fundamental-ngx/compare/v0.17.2-rc.27...v0.18.0-rc.0) (2020-05-05)
+
+
+### Features
+
+* Update Select component to match new fundamental styles ([#2150](https://github.com/SAP/fundamental-ngx/issues/2150)) ([6ccf652](https://github.com/SAP/fundamental-ngx/commit/6ccf652))
+
+
+
+<a name="0.17.2-rc.27"></a>
+## [0.17.2-rc.27](https://github.com/SAP/fundamental-ngx/compare/v0.17.2-rc.26...v0.17.2-rc.27) (2020-05-05)
+
+
+### Bug Fixes
+
+* add ariaLabel input to product-switch for button ([#2477](https://github.com/SAP/fundamental-ngx/issues/2477)) ([e7de4ee](https://github.com/SAP/fundamental-ngx/commit/e7de4ee))
+
+
+
+<a name="0.17.2-rc.26"></a>
+## [0.17.2-rc.26](https://github.com/SAP/fundamental-ngx/compare/v0.17.2-rc.25...v0.17.2-rc.26) (2020-05-04)
+
+
+
+<a name="0.17.2-rc.25"></a>
+## [0.17.2-rc.25](https://github.com/SAP/fundamental-ngx/compare/v0.17.2-rc.24...v0.17.2-rc.25) (2020-05-03)
+
+
+
+<a name="0.17.2-rc.24"></a>
+## [0.17.2-rc.24](https://github.com/SAP/fundamental-ngx/compare/v0.17.2-rc.23...v0.17.2-rc.24) (2020-05-03)
+
+
+
+<a name="0.17.2-rc.23"></a>
+## [0.17.2-rc.23](https://github.com/SAP/fundamental-ngx/compare/v0.17.2-rc.22...v0.17.2-rc.23) (2020-05-03)
+
+
+
+<a name="0.17.2-rc.22"></a>
+## [0.17.2-rc.22](https://github.com/SAP/fundamental-ngx/compare/v0.17.2-rc.21...v0.17.2-rc.22) (2020-05-03)
+
+
+
+<a name="0.17.2-rc.21"></a>
+## [0.17.2-rc.21](https://github.com/SAP/fundamental-ngx/compare/v0.17.2-rc.20...v0.17.2-rc.21) (2020-05-03)
+
+
+
+<a name="0.17.2-rc.20"></a>
+## [0.17.2-rc.20](https://github.com/SAP/fundamental-ngx/compare/v0.17.2-rc.19...v0.17.2-rc.20) (2020-05-03)
+
+
+
+<a name="0.17.2-rc.19"></a>
+## [0.17.2-rc.19](https://github.com/SAP/fundamental-ngx/compare/v0.17.2-rc.18...v0.17.2-rc.19) (2020-05-03)
+
+
+
+<a name="0.17.2-rc.18"></a>
+## [0.17.2-rc.18](https://github.com/SAP/fundamental-ngx/compare/v0.17.2-rc.17...v0.17.2-rc.18) (2020-05-03)
+
+
+
+<a name="0.17.2-rc.17"></a>
+## [0.17.2-rc.17](https://github.com/SAP/fundamental-ngx/compare/v0.17.2-rc.16...v0.17.2-rc.17) (2020-05-03)
+
+
+
+<a name="0.17.2-rc.16"></a>
+## [0.17.2-rc.16](https://github.com/SAP/fundamental-ngx/compare/v0.17.2-rc.15...v0.17.2-rc.16) (2020-05-03)
+
+
+
+<a name="0.17.2-rc.15"></a>
+## [0.17.2-rc.15](https://github.com/SAP/fundamental-ngx/compare/v0.17.2-rc.14...v0.17.2-rc.15) (2020-05-01)
+
+
+### Bug Fixes
+
+* change static placement value ([#2445](https://github.com/SAP/fundamental-ngx/issues/2445)) ([d1f4a2a](https://github.com/SAP/fundamental-ngx/commit/d1f4a2a))
+
+
+
+<a name="0.17.2-rc.14"></a>
+## [0.17.2-rc.14](https://github.com/SAP/fundamental-ngx/compare/v0.17.2-rc.13...v0.17.2-rc.14) (2020-04-29)
+
+
+### Bug Fixes
+
+* (platform) Split menu button as a component ([#2425](https://github.com/SAP/fundamental-ngx/issues/2425)) ([7d1ce01](https://github.com/SAP/fundamental-ngx/commit/7d1ce01))
+
+
+
+<a name="0.17.2-rc.13"></a>
+## [0.17.2-rc.13](https://github.com/SAP/fundamental-ngx/compare/v0.17.2-rc.12...v0.17.2-rc.13) (2020-04-29)
+
+
+### Bug Fixes
+
+* (platform) Menu button As a component ([#2223](https://github.com/SAP/fundamental-ngx/issues/2223)) ([ad1224c](https://github.com/SAP/fundamental-ngx/commit/ad1224c))
+
+
+
+<a name="0.17.2-rc.12"></a>
+## [0.17.2-rc.12](https://github.com/SAP/fundamental-ngx/compare/v0.17.2-rc.11...v0.17.2-rc.12) (2020-04-28)
+
+
+
+<a name="0.17.2-rc.11"></a>
+## [0.17.2-rc.11](https://github.com/SAP/fundamental-ngx/compare/v0.17.2-rc.10...v0.17.2-rc.11) (2020-04-28)
+
+
+### Bug Fixes
+
+* add aria label to notification header for a11y ([#2403](https://github.com/SAP/fundamental-ngx/issues/2403)) ([cb88d66](https://github.com/SAP/fundamental-ngx/commit/cb88d66))
+* Add RTL to popover ([#2426](https://github.com/SAP/fundamental-ngx/issues/2426)) ([65bcf4f](https://github.com/SAP/fundamental-ngx/commit/65bcf4f))
+
+
+
+<a name="0.17.2-rc.10"></a>
+## [0.17.2-rc.10](https://github.com/SAP/fundamental-ngx/compare/v0.17.2-rc.9...v0.17.2-rc.10) (2020-04-28)
+
+
+### Bug Fixes
+
+* Checkbox check destroyed state on detect changes ([#2427](https://github.com/SAP/fundamental-ngx/issues/2427)) ([4cd81da](https://github.com/SAP/fundamental-ngx/commit/4cd81da))
+
+
+
+<a name="0.17.2-rc.9"></a>
+## [0.17.2-rc.9](https://github.com/SAP/fundamental-ngx/compare/v0.17.2-rc.8...v0.17.2-rc.9) (2020-04-27)
+
+
+### Bug Fixes
+
+* multi-input and tokenizer should use CssClassBuilder ([#2398](https://github.com/SAP/fundamental-ngx/issues/2398)) ([e723046](https://github.com/SAP/fundamental-ngx/commit/e723046))
+
+
+
+<a name="0.17.2-rc.8"></a>
+## [0.17.2-rc.8](https://github.com/SAP/fundamental-ngx/compare/v0.17.2-rc.7...v0.17.2-rc.8) (2020-04-27)
+
+
+### Bug Fixes
+
+* fixed master branch by removing failed merge files ([#2428](https://github.com/SAP/fundamental-ngx/issues/2428)) ([e2a9b18](https://github.com/SAP/fundamental-ngx/commit/e2a9b18))
+
+
+
 <a name="0.17.2-rc.7"></a>
 ## [0.17.2-rc.7](https://github.com/SAP/fundamental-ngx/compare/v0.17.2-rc.6...v0.17.2-rc.7) (2020-04-27)
 
