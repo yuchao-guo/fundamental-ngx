@@ -142,7 +142,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
         PlatformMenuButtonExampleComponent,
         PlatformMenuButtonCozyExampleComponent,
         PlatformMenuButtonCompactExampleComponent,
-        PlatformMenuButtonHeaderComponent
+        PlatformMenuButtonHeaderComponent,
     ],
     imports: [
         FundamentalNgxCoreModule,
