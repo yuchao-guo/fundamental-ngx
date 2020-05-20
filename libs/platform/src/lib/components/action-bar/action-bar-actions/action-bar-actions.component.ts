@@ -9,7 +9,7 @@ import {
     ViewChildren,
     QueryList
 } from '@angular/core';
-import { MenuItemDirective, MenuKeyboardService } from '@fundamental-ngx/core';
+import { MenuKeyboardService } from '@fundamental-ngx/core';
 import { ActionItem } from '../action-bar.component';
 import { Placement } from 'popper.js';
 
@@ -34,8 +34,8 @@ export class ActionBarActionsComponent implements OnInit {
     /**
      * View children of action bar actions component
      */
-    @ViewChildren(MenuItemDirective)
-    menulist: QueryList<MenuItemDirective>;
+    @ViewChildren('MenuItemDirective')
+    menulist: QueryList<any>;
 
     /**
      * specifies the posistion of the contextual mennu
